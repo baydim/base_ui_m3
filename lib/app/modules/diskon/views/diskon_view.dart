@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../../../theme/app_theme.dart';
 import '../../home/views/widget/widget_base_card.dart';
 import '../controllers/diskon_controller.dart';
 
