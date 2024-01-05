@@ -1,6 +1,71 @@
 # base_ui_m3
 
-A new Flutter project.
+Ini adalah aplikasi flutter dalam pembuatan ui mengacu pada base themeData dari flutter material sendiri dari penggunaan textStyle sampai pemiligan warna diambil dari themeData default
+
+
+```dart
+import 'package:flutter/material.dart';
+
+/// function to get textStyle
+TextTheme appFont(BuildContext context) {
+  var data = Theme.of(context).textTheme;
+  return data;
+}
+
+/// function to get Color
+ColorApp appColor(BuildContext context) {
+  var scheme = Theme.of(context).colorScheme;
+  var theme = Theme.of(context);
+  return ColorApp(
+    useScheme: scheme,
+    useThemeData: theme,
+  );
+}
+
+/// class return to collecting option color from base theme
+class ColorApp {
+  ColorApp({
+    required this.useScheme,
+    required this.useThemeData,
+  });
+
+  ColorScheme useScheme;
+  ThemeData useThemeData;
+}
+
+
+/// default theme data
+ThemeData appTheme(BuildContext context) {
+  return ThemeData(
+    appBarTheme: AppBarTheme(
+      titleTextStyle: appFont(context).titleMedium?.copyWith(
+            fontWeight: FontWeight.bold,
+            color: Theme.of(context).brightness == Brightness.dark
+                ? Colors.white
+                : Colors.black,
+          ),
+    ),
+    navigationBarTheme: NavigationBarThemeData(
+      labelTextStyle: MaterialStatePropertyAll(
+        appFont(context).labelSmall?.copyWith(
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? Colors.white
+                  : Colors.black,
+            ),
+      ),
+    ),
+    fontFamily: "google",
+    colorScheme: ColorScheme.fromSeed(
+
+    /// core goal of this project in here
+      seedColor: Colors.blue,
+      brightness: Brightness.light,
+    ///
+    ),
+    useMaterial3: true,
+  );
+}
+```
 
 ## Getting Started
 
