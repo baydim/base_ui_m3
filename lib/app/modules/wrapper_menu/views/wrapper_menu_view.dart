@@ -5,6 +5,7 @@ import 'package:base_ui_m3/app/modules/profile/views/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../theme/app_theme.dart';
 import '../controllers/wrapper_menu_controller.dart';
 
 class WrapperMenuView extends GetView<WrapperMenuController> {
@@ -38,6 +39,7 @@ class WrapperMenuView extends GetView<WrapperMenuController> {
             NavigationDestination(
               selectedIcon: Icon(
                 Icons.home_filled,
+                color: appColor(context).useScheme.primary,
               ),
               icon: Icon(
                 Icons.home_filled,
@@ -49,6 +51,7 @@ class WrapperMenuView extends GetView<WrapperMenuController> {
                 label: Text("1"),
                 child: Icon(
                   Icons.luggage_rounded,
+                  color: appColor(context).useScheme.primary,
                 ),
               ),
               icon: Badge(
@@ -64,6 +67,7 @@ class WrapperMenuView extends GetView<WrapperMenuController> {
                 label: Text("10"),
                 child: Icon(
                   Icons.monetization_on_rounded,
+                  color: appColor(context).useScheme.primary,
                 ),
               ),
               icon: Badge(
@@ -75,7 +79,10 @@ class WrapperMenuView extends GetView<WrapperMenuController> {
               label: 'Diskon',
             ),
             NavigationDestination(
-              selectedIcon: Icon(Icons.account_circle),
+              selectedIcon: Icon(
+                Icons.account_circle,
+                color: appColor(context).useScheme.primary,
+              ),
               icon: Icon(Icons.account_circle),
               label: 'Profile',
             ),

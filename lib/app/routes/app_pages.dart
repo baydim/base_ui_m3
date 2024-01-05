@@ -8,6 +8,8 @@ import '../modules/pesanan/bindings/pesanan_binding.dart';
 import '../modules/pesanan/views/pesanan_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
+import '../modules/search_penginapan/bindings/search_penginapan_binding.dart';
+import '../modules/search_penginapan/views/search_penginapan_view.dart';
 import '../modules/wrapper_menu/bindings/wrapper_menu_binding.dart';
 import '../modules/wrapper_menu/views/wrapper_menu_view.dart';
 
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.PROFILE,
       page: () => const ProfileView(),
       binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.SEARCH_PENGINAPAN,
+      page: () => const SearchPenginapanView(),
+      binding: SearchPenginapanBinding(),
     ),
   ];
 }

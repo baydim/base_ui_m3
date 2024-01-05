@@ -8,6 +8,7 @@ abstract class Routes {
   static const PESANAN = _Paths.PESANAN;
   static const DISKON = _Paths.DISKON;
   static const PROFILE = _Paths.PROFILE;
+  static const SEARCH_PENGINAPAN = _Paths.SEARCH_PENGINAPAN;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const PESANAN = '/pesanan';
   static const DISKON = '/diskon';
   static const PROFILE = '/profile';
+  static const SEARCH_PENGINAPAN = '/search-penginapan';
 }

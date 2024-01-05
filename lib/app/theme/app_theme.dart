@@ -5,7 +5,21 @@ TextTheme appFont(BuildContext context) {
   return data;
 }
 
-ThemeData appColor(BuildContext context) {
-  var data = Theme.of(context);
-  return data;
+ColorApp appColor(BuildContext context) {
+  var scheme = Theme.of(context).colorScheme;
+  var theme = Theme.of(context);
+  return ColorApp(
+    useScheme: scheme,
+    useThemeData: theme,
+  );
+}
+
+class ColorApp {
+  ColorApp({
+    required this.useScheme,
+    required this.useThemeData,
+  });
+
+  ColorScheme useScheme;
+  ThemeData useThemeData;
 }
