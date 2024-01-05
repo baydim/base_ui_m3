@@ -65,8 +65,8 @@ class _WidgetCardRowState extends State<WidgetCardRow> {
                                       8,
                                     ),
                                     child: const FadeInImage(
-                                      image: AssetImage(
-                                        "assets/images/_98205cc4-2cdf-4ab9-809a-d66c75dbf890.jpeg",
+                                      image: NetworkImage(
+                                        "https://raw.githubusercontent.com/baydim/base_ui_m3/main/assets/images/_98205cc4-2cdf-4ab9-809a-d66c75dbf890.jpeg",
                                       ),
                                       placeholder: AssetImage(
                                         "assets/images/peace.png",

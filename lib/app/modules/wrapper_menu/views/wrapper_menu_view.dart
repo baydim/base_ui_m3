@@ -33,7 +33,7 @@ class WrapperMenuView extends GetView<WrapperMenuController> {
         bottomNavigationBar: Theme(
           data: appTheme(context),
           child: ClipRRect(
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(10),
               topRight: Radius.circular(10),
             ),
@@ -50,7 +50,7 @@ class WrapperMenuView extends GetView<WrapperMenuController> {
                     Icons.home_filled,
                     color: appColor(context).useScheme.primary,
                   ),
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.home_filled,
                   ),
                   label: 'Home',
