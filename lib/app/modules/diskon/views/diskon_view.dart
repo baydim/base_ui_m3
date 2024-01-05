@@ -16,7 +16,7 @@ class DiskonView extends GetView<DiskonController> {
         centerTitle: true,
       ),
       body: ListView(
-        children: [
+        children: const [
           WidgetBaseCardSecondary(
             child: FadeInImage(
               image: NetworkImage(
