@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../theme/app_theme.dart';
-import '../controllers/bookmark_controller.dart';
+import '../controllers/notification_controller.dart';
 
-class BookmarkView extends GetView<BookmarkController> {
-  const BookmarkView({Key? key}) : super(key: key);
+class NotificationView extends GetView<NotificationController> {
+  const NotificationView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bookmark'),
+        title: const Text('Notifikasi'),
         centerTitle: true,
       ),
       body: ListView(
@@ -30,7 +30,7 @@ class BookmarkView extends GetView<BookmarkController> {
                     horizontal: 20,
                   ),
                 ),
-                hintText: "Cari Bookmark...",
+                hintText: "Cari Notifikasi...",
                 leading: Icon(
                   Icons.search,
                   color: appColor(context).useScheme.primary,

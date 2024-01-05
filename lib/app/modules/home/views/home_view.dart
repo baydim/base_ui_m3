@@ -1,5 +1,6 @@
 import 'package:base_ui_m3/app/modules/home/views/widget/widget_base_card.dart';
 import 'package:base_ui_m3/app/modules/home/views/widget/widget_saldo.dart';
+import 'package:base_ui_m3/app/routes/app_pages.dart';
 import 'package:base_ui_m3/app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,9 @@ class _HomeViewState extends State<HomeView> {
         title: const Text("BASE UI M3"),
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(Routes.NOTIFICATION);
+              },
               icon: const Badge(
                 label: Text("2"),
                 child: Icon(
@@ -96,8 +99,8 @@ class _HomeViewState extends State<HomeView> {
           ),
           const WidgetBaseCard(
             child: FadeInImage(
-              image: AssetImage(
-                "assets/images/_0d3f9f78-2345-4c1b-8119-a5c367bf7d48.jpeg",
+              image: NetworkImage(
+                "https://th.bing.com/th/id/OIG.23UClhMw42Uo7ZSE7kDo?pid=ImgGn",
               ),
               placeholder: AssetImage(
                 "assets/images/peace.png",
@@ -181,8 +184,8 @@ class _HomeViewState extends State<HomeView> {
           ),
           const WidgetBaseCard(
             child: FadeInImage(
-              image: AssetImage(
-                "assets/images/_f3e2dc4a-31b1-4499-b0af-80792ed8543e.jpeg",
+              image: NetworkImage(
+                "https://th.bing.com/th/id/OIG.HaTwF4tamiGpeIImqJyN?w=1024&h=1024&rs=1&pid=ImgDetMain",
               ),
               placeholder: AssetImage(
                 "assets/images/peace.png",
@@ -216,8 +219,8 @@ class _HomeViewState extends State<HomeView> {
 
           const WidgetBaseCard(
             child: FadeInImage(
-              image: AssetImage(
-                "assets/images/_cadaf493-ad53-4de1-83da-0c2184a4d235.jpeg",
+              image: NetworkImage(
+                "https://th.bing.com/th/id/OIG.JtYANL_5rmLdPwsSikrF?pid=ImgGn",
               ),
               placeholder: AssetImage(
                 "assets/images/peace.png",

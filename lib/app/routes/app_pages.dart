@@ -6,6 +6,8 @@ import '../modules/diskon/bindings/diskon_binding.dart';
 import '../modules/diskon/views/diskon_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/notification/bindings/notification_binding.dart';
+import '../modules/notification/views/notification_view.dart';
 import '../modules/pesanan/bindings/pesanan_binding.dart';
 import '../modules/pesanan/views/pesanan_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
@@ -59,6 +61,11 @@ class AppPages {
       name: _Paths.BOOKMARK,
       page: () => const BookmarkView(),
       binding: BookmarkBinding(),
+    ),
+    GetPage(
+      name: _Paths.NOTIFICATION,
+      page: () => const NotificationView(),
+      binding: NotificationBinding(),
     ),
   ];
 }
