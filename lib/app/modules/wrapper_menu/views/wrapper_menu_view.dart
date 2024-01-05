@@ -20,8 +20,8 @@ class WrapperMenuView extends GetView<WrapperMenuController> {
           onPageChanged: (v) {
             controller.indexPage.value = v;
           },
-          physics: NeverScrollableScrollPhysics(),
-          children: [
+          physics: const NeverScrollableScrollPhysics(),
+          children: const [
             HomeView(),
             PesananView(),
             DiskonView(),
@@ -41,20 +41,20 @@ class WrapperMenuView extends GetView<WrapperMenuController> {
                 Icons.home_filled,
                 color: appColor(context).useScheme.primary,
               ),
-              icon: Icon(
+              icon: const Icon(
                 Icons.home_filled,
               ),
               label: 'Home',
             ),
             NavigationDestination(
               selectedIcon: Badge(
-                label: Text("1"),
+                label: const Text("1"),
                 child: Icon(
                   Icons.luggage_rounded,
                   color: appColor(context).useScheme.primary,
                 ),
               ),
-              icon: Badge(
+              icon: const Badge(
                 label: Text("1"),
                 child: Icon(
                   Icons.luggage_rounded,
@@ -64,13 +64,13 @@ class WrapperMenuView extends GetView<WrapperMenuController> {
             ),
             NavigationDestination(
               selectedIcon: Badge(
-                label: Text("10"),
+                label: const Text("10"),
                 child: Icon(
                   Icons.monetization_on_rounded,
                   color: appColor(context).useScheme.primary,
                 ),
               ),
-              icon: Badge(
+              icon: const Badge(
                 label: Text("10"),
                 child: Icon(
                   Icons.monetization_on_rounded,
@@ -83,7 +83,7 @@ class WrapperMenuView extends GetView<WrapperMenuController> {
                 Icons.account_circle,
                 color: appColor(context).useScheme.primary,
               ),
-              icon: Icon(Icons.account_circle),
+              icon: const Icon(Icons.account_circle),
               label: 'Profile',
             ),
           ],

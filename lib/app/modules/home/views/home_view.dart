@@ -1,4 +1,3 @@
-import 'package:base_ui_m3/app/routes/app_pages.dart';
 import 'package:base_ui_m3/app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -28,9 +27,9 @@ class HomeView extends GetView<HomeController> {
       ),
       body: CustomScrollView(
         slivers: [
-          WidgetButtonSearch(),
-          WidgetCityRound(),
-          SliverToBoxAdapter(
+          const WidgetButtonSearch(),
+          const WidgetCityRound(),
+          const SliverToBoxAdapter(
             child: SizedBox(
               height: 20,
             ),
@@ -53,7 +52,7 @@ class HomeView extends GetView<HomeController> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   for (var i = 0; i < 10; i++)
@@ -67,7 +66,7 @@ class HomeView extends GetView<HomeController> {
                             child: InkWell(
                               borderRadius: BorderRadius.circular(10),
                               onTap: () {},
-                              child: Column(
+                              child: const Column(
                                 children: [
                                   Text(
                                     "dsfsfdsfss",
@@ -77,12 +76,12 @@ class HomeView extends GetView<HomeController> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 0,
                         ),
                       ],
                     ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                 ],
