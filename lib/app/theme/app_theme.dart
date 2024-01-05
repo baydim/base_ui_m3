@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 TextTheme appFont(BuildContext context) {
   var data = Theme.of(context).textTheme;

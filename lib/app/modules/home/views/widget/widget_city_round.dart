@@ -37,7 +37,7 @@ class WidgetCityRound extends StatelessWidget {
                           radius: 25,
                           child: Icon(
                             Icons.navigation_rounded,
-                            color: appColor(context).useThemeData.primaryColor,
+                            color: appColor(context).useScheme.primary,
                           ),
                         ),
                         Expanded(

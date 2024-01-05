@@ -100,7 +100,7 @@ class WidgetCardRow extends StatelessWidget {
                     ),
                   ],
                 ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               FloatingActionButton(

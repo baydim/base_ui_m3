@@ -75,8 +75,7 @@ class WidgetSaldo extends StatelessWidget {
                         borderRadius: BorderRadius.circular(
                           8,
                         ),
-                        color:
-                            appColor(context).useThemeData.secondaryHeaderColor,
+                        color: appColor(context).useScheme.secondaryContainer,
                       ),
                       child: Icon(
                         Icons.send_outlined,
@@ -99,8 +98,7 @@ class WidgetSaldo extends StatelessWidget {
                         borderRadius: BorderRadius.circular(
                           8,
                         ),
-                        color:
-                            appColor(context).useThemeData.secondaryHeaderColor,
+                        color: appColor(context).useScheme.secondaryContainer,
                       ),
                       child: Icon(
                         Icons.add_circle_outline,
@@ -123,8 +121,7 @@ class WidgetSaldo extends StatelessWidget {
                         borderRadius: BorderRadius.circular(
                           8,
                         ),
-                        color:
-                            appColor(context).useThemeData.secondaryHeaderColor,
+                        color: appColor(context).useScheme.secondaryContainer,
                       ),
                       child: Icon(
                         Icons.qr_code_sharp,

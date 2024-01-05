@@ -16,6 +16,7 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        titleTextStyle: appTheme(context).appBarTheme.titleTextStyle,
         title: const Text("BASE UI M3"),
         actions: [
           IconButton(
@@ -56,7 +57,7 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
           ),
-          WidgetCardRow(),
+          const WidgetCardRow(),
 
           ///
           ///
@@ -80,7 +81,7 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
           ),
-          WidgetBaseCard(),
+          const WidgetBaseCard(),
 
           ///
           ///
@@ -103,7 +104,7 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
           ),
-          WidgetCardRow(),
+          const WidgetCardRow(),
 
           ///
           ///
@@ -127,7 +128,7 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
           ),
-          WidgetCardRow(),
+          const WidgetCardRow(),
 
           ///
           ///
@@ -155,7 +156,7 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
           ),
-          WidgetBaseCard(),
+          const WidgetBaseCard(),
 
           ///
           ///
@@ -179,7 +180,7 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
           ),
-          WidgetBaseCard(),
+          const WidgetBaseCard(),
 
           const SliverToBoxAdapter(
             child: SizedBox(
