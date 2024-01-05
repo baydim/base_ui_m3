@@ -10,8 +10,24 @@ import 'widget/widget_button_search.dart';
 import 'widget/widget_card_row.dart';
 import 'widget/widget_city_round.dart';
 
-class HomeView extends GetView<HomeController> {
-  const HomeView({Key? key}) : super(key: key);
+class HomeView extends StatefulWidget {
+  const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  HomeController controller = Get.put(HomeController());
+
+  @override
+  void initState() {
+    Future.delayed(500.seconds, () {
+      setState(() {});
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
