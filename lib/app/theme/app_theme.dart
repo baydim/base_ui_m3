@@ -35,7 +35,7 @@ ThemeData appTheme(BuildContext context) {
           ),
     ),
     navigationBarTheme: NavigationBarThemeData(
-      iconTheme: MaterialStatePropertyAll(
+      iconTheme: const MaterialStatePropertyAll(
         IconThemeData(
           size: 20,
         ),
