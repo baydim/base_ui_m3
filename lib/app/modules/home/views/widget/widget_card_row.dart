@@ -5,8 +5,18 @@ import 'package:get/get.dart';
 
 import '../../../../theme/app_theme.dart';
 
-class WidgetCardRow extends StatelessWidget {
+class WidgetCardRow extends StatefulWidget {
   const WidgetCardRow({super.key});
+
+  @override
+  State<WidgetCardRow> createState() => _WidgetCardRowState();
+}
+
+class _WidgetCardRowState extends State<WidgetCardRow> {
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,27 +50,32 @@ class WidgetCardRow extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Expanded(
-                                  flex: 2,
-                                  child: Container(
-                                    width: Get.width / 1.8,
-                                    height: Get.width / 3,
-                                    decoration: BoxDecoration(
-                                      color:
-                                          appColor(context).useScheme.primary,
-                                      borderRadius: BorderRadius.circular(
-                                        8,
-                                      ),
+                                flex: 2,
+                                child: Container(
+                                  width: Get.width / 1.8,
+                                  height: Get.width / 3,
+                                  decoration: BoxDecoration(
+                                    color: appColor(context).useScheme.primary,
+                                    borderRadius: BorderRadius.circular(
+                                      8,
                                     ),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(
-                                        8,
-                                      ),
-                                      child: Image.asset(
+                                  ),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(
+                                      8,
+                                    ),
+                                    child: const FadeInImage(
+                                      image: AssetImage(
                                         "assets/images/_98205cc4-2cdf-4ab9-809a-d66c75dbf890.jpeg",
-                                        fit: BoxFit.cover,
                                       ),
+                                      placeholder: AssetImage(
+                                        "assets/images/peace.png",
+                                      ),
+                                      fit: BoxFit.cover,
                                     ),
-                                  )),
+                                  ),
+                                ),
+                              ),
                               Expanded(
                                 child: Padding(
                                   padding: const EdgeInsets.all(

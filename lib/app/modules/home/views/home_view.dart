@@ -81,9 +81,14 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
           ),
-          WidgetBaseCard(
-            child: Image.asset(
-              "assets/images/_0d3f9f78-2345-4c1b-8119-a5c367bf7d48.jpeg",
+          const WidgetBaseCard(
+            child: FadeInImage(
+              image: AssetImage(
+                "assets/images/_0d3f9f78-2345-4c1b-8119-a5c367bf7d48.jpeg",
+              ),
+              placeholder: AssetImage(
+                "assets/images/peace.png",
+              ),
               fit: BoxFit.cover,
             ),
           ),
@@ -161,9 +166,14 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
           ),
-          WidgetBaseCard(
-            child: Image.asset(
-              "assets/images/_f3e2dc4a-31b1-4499-b0af-80792ed8543e.jpeg",
+          const WidgetBaseCard(
+            child: FadeInImage(
+              image: AssetImage(
+                "assets/images/_f3e2dc4a-31b1-4499-b0af-80792ed8543e.jpeg",
+              ),
+              placeholder: AssetImage(
+                "assets/images/peace.png",
+              ),
               fit: BoxFit.cover,
             ),
           ),
@@ -190,9 +200,15 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
           ),
-          WidgetBaseCard(
-            child: Image.asset(
-              "assets/images/_cadaf493-ad53-4de1-83da-0c2184a4d235.jpeg",
+
+          const WidgetBaseCard(
+            child: FadeInImage(
+              image: AssetImage(
+                "assets/images/_cadaf493-ad53-4de1-83da-0c2184a4d235.jpeg",
+              ),
+              placeholder: AssetImage(
+                "assets/images/peace.png",
+              ),
               fit: BoxFit.cover,
             ),
           ),
