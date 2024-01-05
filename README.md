@@ -1,6 +1,6 @@
 # base_ui_m3
 
-Ini adalah aplikasi flutter dalam pembuatan ui mengacu pada base themeData dari flutter material sendiri dari penggunaan textStyle sampai pemiligan warna diambil dari themeData default
+This is a Flutter application in UI development that refers to the base ThemeData of Flutter Material itself, from the use of textStyle to the selection of colors taken from the default ThemeData.
 
 
 ```dart
