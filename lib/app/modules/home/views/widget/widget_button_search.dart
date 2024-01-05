@@ -12,6 +12,7 @@ class WidgetButtonSearch extends StatelessWidget {
     return SliverAppBar(
       floating: true,
       snap: true,
+      backgroundColor: Colors.white,
       flexibleSpace: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 20,
