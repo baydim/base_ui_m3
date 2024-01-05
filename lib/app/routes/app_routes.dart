@@ -11,6 +11,7 @@ abstract class Routes {
   static const DISKON = _Paths.DISKON;
   static const PROFILE = _Paths.PROFILE;
   static const SEARCH_PENGINAPAN = _Paths.SEARCH_PENGINAPAN;
+  static const BOOKMARK = _Paths.BOOKMARK;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const DISKON = '/diskon';
   static const PROFILE = '/profile';
   static const SEARCH_PENGINAPAN = '/search-penginapan';
+  static const BOOKMARK = '/bookmark';
 }

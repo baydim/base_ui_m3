@@ -24,22 +24,7 @@ class App extends StatelessWidget {
         title: "Application",
         initialRoute: AppPages.INITIAL,
         getPages: AppPages.routes,
-        theme: ThemeData(
-          appBarTheme: AppBarTheme(
-            titleTextStyle: appFont(context).titleMedium,
-          ),
-          navigationBarTheme: NavigationBarThemeData(
-            labelTextStyle: MaterialStatePropertyAll(
-              appFont(context).labelSmall,
-            ),
-          ),
-          fontFamily: "google",
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.blue,
-            brightness: Brightness.light,
-          ),
-          useMaterial3: true,
-        ),
+        theme: appTheme(context),
       ),
     );
   }

@@ -12,7 +12,7 @@ class WidgetButtonSearch extends StatelessWidget {
     return SliverAppBar(
       floating: true,
       snap: true,
-      backgroundColor: Colors.white,
+      backgroundColor: appColor(context).useScheme.background,
       flexibleSpace: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 20,
@@ -44,7 +44,7 @@ class WidgetButtonSearch extends StatelessWidget {
                 ),
                 elevation: const MaterialStatePropertyAll(0),
                 backgroundColor: MaterialStatePropertyAll(
-                  appColor(context).useThemeData.secondaryHeaderColor,
+                  appColor(context).useScheme.inversePrimary.withOpacity(0.2),
                 ),
               ),
             ),

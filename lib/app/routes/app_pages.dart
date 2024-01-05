@@ -1,7 +1,7 @@
-// ignore_for_file: constant_identifier_names
-
 import 'package:get/get.dart';
 
+import '../modules/bookmark/bindings/bookmark_binding.dart';
+import '../modules/bookmark/views/bookmark_view.dart';
 import '../modules/diskon/bindings/diskon_binding.dart';
 import '../modules/diskon/views/diskon_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -14,6 +14,8 @@ import '../modules/search_penginapan/bindings/search_penginapan_binding.dart';
 import '../modules/search_penginapan/views/search_penginapan_view.dart';
 import '../modules/wrapper_menu/bindings/wrapper_menu_binding.dart';
 import '../modules/wrapper_menu/views/wrapper_menu_view.dart';
+
+// ignore_for_file: constant_identifier_names
 
 part 'app_routes.dart';
 
@@ -52,6 +54,11 @@ class AppPages {
       name: _Paths.SEARCH_PENGINAPAN,
       page: () => const SearchPenginapanView(),
       binding: SearchPenginapanBinding(),
+    ),
+    GetPage(
+      name: _Paths.BOOKMARK,
+      page: () => const BookmarkView(),
+      binding: BookmarkBinding(),
     ),
   ];
 }
