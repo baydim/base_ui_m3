@@ -22,7 +22,7 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   void initState() {
-    Future.delayed(500.seconds, () {
+    Future.microtask(() {
       setState(() {});
     });
     super.initState();

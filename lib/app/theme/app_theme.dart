@@ -35,8 +35,15 @@ ThemeData appTheme(BuildContext context) {
           ),
     ),
     navigationBarTheme: NavigationBarThemeData(
+      iconTheme: MaterialStatePropertyAll(
+        IconThemeData(
+          size: 20,
+        ),
+      ),
       labelTextStyle: MaterialStatePropertyAll(
         appFont(context).labelSmall?.copyWith(
+              fontFamily: "google",
+              fontSize: 10,
               color: Theme.of(context).brightness == Brightness.dark
                   ? Colors.white
                   : Colors.black,

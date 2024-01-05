@@ -129,7 +129,7 @@ class _WidgetCardRowState extends State<WidgetCardRow> {
               const SizedBox(
                 width: 10,
               ),
-              FloatingActionButton(
+              FloatingActionButton.small(
                 heroTag: Random.secure().nextInt(100).toString(),
                 elevation: 0,
                 onPressed: () {},

@@ -61,9 +61,6 @@ class WidgetCityRound extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  width: 5,
-                ),
               ],
             ),
             for (var i = 0; i < 8; i++)
