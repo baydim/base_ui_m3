@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../../theme/app_theme.dart';
 
 class WidgetBaseCard extends StatelessWidget {
-  const WidgetBaseCard({super.key});
-
+  const WidgetBaseCard({super.key, this.child, this.onTap});
+  final Widget? child;
+  final Function? onTap;
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
@@ -20,9 +21,13 @@ class WidgetBaseCard extends StatelessWidget {
         ),
         child: InkWell(
           borderRadius: BorderRadius.circular(8),
-          onTap: () {},
-          child: const AspectRatio(
+          onTap: () {
+            onTap;
+          },
+          child: AspectRatio(
             aspectRatio: 16 / 9,
+            child:
+                ClipRRect(borderRadius: BorderRadius.circular(8), child: child),
           ),
         ),
       ),

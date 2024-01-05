@@ -1,4 +1,4 @@
-import 'package:base_ui_m3/app/modules/home/views/widget/widget_diskon.dart';
+import 'package:base_ui_m3/app/modules/home/views/widget/widget_base_card.dart';
 import 'package:base_ui_m3/app/modules/home/views/widget/widget_saldo.dart';
 import 'package:base_ui_m3/app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
@@ -81,7 +81,12 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
           ),
-          const WidgetBaseCard(),
+          WidgetBaseCard(
+            child: Image.asset(
+              "assets/images/_0d3f9f78-2345-4c1b-8119-a5c367bf7d48.jpeg",
+              fit: BoxFit.cover,
+            ),
+          ),
 
           ///
           ///
@@ -156,7 +161,12 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
           ),
-          const WidgetBaseCard(),
+          WidgetBaseCard(
+            child: Image.asset(
+              "assets/images/_f3e2dc4a-31b1-4499-b0af-80792ed8543e.jpeg",
+              fit: BoxFit.cover,
+            ),
+          ),
 
           ///
           ///
@@ -180,7 +190,12 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
           ),
-          const WidgetBaseCard(),
+          WidgetBaseCard(
+            child: Image.asset(
+              "assets/images/_cadaf493-ad53-4de1-83da-0c2184a4d235.jpeg",
+              fit: BoxFit.cover,
+            ),
+          ),
 
           const SliverToBoxAdapter(
             child: SizedBox(

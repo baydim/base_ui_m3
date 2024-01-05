@@ -43,12 +43,23 @@ class WidgetCardRow extends StatelessWidget {
                                   flex: 2,
                                   child: Container(
                                     width: Get.width / 1.8,
+                                    height: Get.width / 3,
                                     decoration: BoxDecoration(
-                                        color:
-                                            appColor(context).useScheme.primary,
-                                        borderRadius: BorderRadius.circular(
-                                          8,
-                                        )),
+                                      color:
+                                          appColor(context).useScheme.primary,
+                                      borderRadius: BorderRadius.circular(
+                                        8,
+                                      ),
+                                    ),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(
+                                        8,
+                                      ),
+                                      child: Image.asset(
+                                        "assets/images/_98205cc4-2cdf-4ab9-809a-d66c75dbf890.jpeg",
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
                                   )),
                               Expanded(
                                 child: Padding(
