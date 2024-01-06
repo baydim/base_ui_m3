@@ -110,7 +110,7 @@ class _WidgetCardRowState extends State<WidgetCardRow> {
                                           child: Text(
                                             "Jalan Lokasi Hotel",
                                             style: appFont(context)
-                                                .bodySmall
+                                                .labelSmall
                                                 ?.copyWith(),
                                           ),
                                         )
