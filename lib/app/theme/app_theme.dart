@@ -35,6 +35,7 @@ ThemeData appTheme(BuildContext context, {bool? useDark}) {
           ),
     ),
     navigationBarTheme: NavigationBarThemeData(
+      backgroundColor: appColor(context).useScheme.background,
       iconTheme: const MaterialStatePropertyAll(
         IconThemeData(
           size: 20,
