@@ -31,7 +31,10 @@ class WrapperMenuView extends GetView<WrapperMenuController> {
           ],
         ),
         bottomNavigationBar: Theme(
-          data: appTheme(context),
+          data: appTheme(
+            context,
+            useDark: controller.isDark.value,
+          ),
           child: ClipRRect(
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(10),

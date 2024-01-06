@@ -13,6 +13,7 @@ abstract class Routes {
   static const SEARCH_PENGINAPAN = _Paths.SEARCH_PENGINAPAN;
   static const BOOKMARK = _Paths.BOOKMARK;
   static const NOTIFICATION = _Paths.NOTIFICATION;
+  static const DETAIL_NOTIF = _Paths.DETAIL_NOTIF;
 }
 
 abstract class _Paths {
@@ -25,4 +26,5 @@ abstract class _Paths {
   static const SEARCH_PENGINAPAN = '/search-penginapan';
   static const BOOKMARK = '/bookmark';
   static const NOTIFICATION = '/notification';
+  static const DETAIL_NOTIF = '/detail-notif';
 }

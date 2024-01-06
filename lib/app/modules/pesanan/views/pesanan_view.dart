@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
 import '../../../theme/app_theme.dart';
 import '../controllers/pesanan_controller.dart';
 
@@ -11,8 +12,21 @@ class PesananView extends GetView<PesananController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        titleTextStyle: appTheme(context).appBarTheme.titleTextStyle,
         title: const Text('Pesanan'),
         centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: () {
+                Get.toNamed(Routes.NOTIFICATION);
+              },
+              icon: const Badge(
+                label: Text("2"),
+                child: Icon(
+                  Icons.notifications_rounded,
+                ),
+              ))
+        ],
       ),
       body: ListView(
         children: [

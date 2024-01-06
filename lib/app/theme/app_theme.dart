@@ -24,7 +24,7 @@ class ColorApp {
   ThemeData useThemeData;
 }
 
-ThemeData appTheme(BuildContext context) {
+ThemeData appTheme(BuildContext context, {bool? useDark}) {
   return ThemeData(
     appBarTheme: AppBarTheme(
       titleTextStyle: appFont(context).titleMedium?.copyWith(
@@ -53,7 +53,8 @@ ThemeData appTheme(BuildContext context) {
     fontFamily: "google",
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.blue,
-      brightness: Brightness.light,
+      brightness:
+          (useDark ?? false) == true ? Brightness.dark : Brightness.light,
     ),
     useMaterial3: true,
   );

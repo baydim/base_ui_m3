@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/bookmark/bindings/bookmark_binding.dart';
 import '../modules/bookmark/views/bookmark_view.dart';
+import '../modules/detail_notif/bindings/detail_notif_binding.dart';
+import '../modules/detail_notif/views/detail_notif_view.dart';
 import '../modules/diskon/bindings/diskon_binding.dart';
 import '../modules/diskon/views/diskon_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -66,6 +68,11 @@ class AppPages {
       name: _Paths.NOTIFICATION,
       page: () => const NotificationView(),
       binding: NotificationBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_NOTIF,
+      page: () => const DetailNotifView(),
+      binding: DetailNotifBinding(),
     ),
   ];
 }

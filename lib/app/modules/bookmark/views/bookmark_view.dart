@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
 import '../../../theme/app_theme.dart';
 import '../controllers/bookmark_controller.dart';
 
@@ -11,8 +12,21 @@ class BookmarkView extends GetView<BookmarkController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        titleTextStyle: appTheme(context).appBarTheme.titleTextStyle,
         title: const Text('Bookmark'),
         centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: () {
+                Get.toNamed(Routes.NOTIFICATION);
+              },
+              icon: const Badge(
+                label: Text("2"),
+                child: Icon(
+                  Icons.notifications_rounded,
+                ),
+              ))
+        ],
       ),
       body: ListView(
         children: [
