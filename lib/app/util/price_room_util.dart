@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:intl/intl.dart';
 
-String price() {
+String priceRandomUtil() {
   var random = Random();
   var minUang = 40000;
   var maxUang = 1000000;

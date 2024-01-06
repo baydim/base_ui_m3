@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -65,7 +64,7 @@ class CardHotel extends StatelessWidget {
                               style: appFont(context).bodySmall?.copyWith(),
                             ),
                             Text(
-                              "Rp${price()}",
+                              "Rp${priceRandomUtil()}",
                               style: appFont(context).bodyLarge?.copyWith(
                                     fontWeight: FontWeight.bold,
                                   ),

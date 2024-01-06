@@ -124,7 +124,7 @@ class BookmarkView extends GetView<BookmarkController> {
                                   style: appFont(context).bodySmall?.copyWith(),
                                 ),
                                 Text(
-                                  "Rp${price()}",
+                                  "Rp${priceRandomUtil()}",
                                   style: appFont(context).bodyLarge?.copyWith(
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -250,7 +250,7 @@ class BookmarkView extends GetView<BookmarkController> {
                                                   ?.copyWith(),
                                             ),
                                             Text(
-                                              "Rp${price()}",
+                                              "Rp${priceRandomUtil()}",
                                               style: appFont(context)
                                                   .bodyLarge
                                                   ?.copyWith(

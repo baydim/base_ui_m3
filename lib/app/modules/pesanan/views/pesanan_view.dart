@@ -162,7 +162,7 @@ class PesananView extends GetView<PesananController> {
                                                   ?.copyWith(),
                                             ),
                                             Text(
-                                              "Rp${price()}",
+                                              "Rp${priceRandomUtil()}",
                                               style: appFont(context)
                                                   .bodyLarge
                                                   ?.copyWith(

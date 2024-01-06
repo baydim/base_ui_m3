@@ -57,7 +57,7 @@ class WidgetCardPesanan extends StatelessWidget {
                                 style: appFont(context).labelSmall?.copyWith(),
                               ),
                               Text(
-                                "Rp${price()}",
+                                "Rp${priceRandomUtil()}",
                                 style: appFont(context).bodyLarge?.copyWith(
                                       fontWeight: FontWeight.bold,
                                     ),
