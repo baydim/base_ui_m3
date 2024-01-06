@@ -77,7 +77,7 @@ class WidgetCityRound extends StatelessWidget {
                         CircleAvatar(
                           radius: 25,
                           child: Icon(
-                            Icons.navigation_rounded,
+                            Icons.near_me_rounded,
                             color: appColor(context).useScheme.primary,
                           ),
                         ),
