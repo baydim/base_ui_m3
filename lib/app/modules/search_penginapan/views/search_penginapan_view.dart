@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -211,7 +214,45 @@ class SearchPenginapanView extends GetView<SearchPenginapanController> {
                       FloatingActionButton.small(
                         elevation: 0,
                         heroTag: "2",
-                        onPressed: () {},
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return BackdropFilter(
+                                filter: ImageFilter.blur(
+                                  sigmaX: 2,
+                                  sigmaY: 2,
+                                ),
+                                child: CupertinoAlertDialog(
+                                  title: const Text("Izin Lokasi"),
+                                  content: const Text(
+                                    "Dengan memberikan izin akses lokasi, kami dapat menampilkan hotel dan penginapan terdekat untuk anda.",
+                                  ),
+                                  actions: [
+                                    CupertinoDialogAction(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text(
+                                        "Kembali",
+                                        style: appFont(context).bodySmall,
+                                      ),
+                                    ),
+                                    CupertinoDialogAction(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text(
+                                        "Izinkan",
+                                        style: appFont(context).bodySmall,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              );
+                            },
+                          );
+                        },
                         child: Icon(
                           Icons.my_location_outlined,
                           color: appColor(context).useScheme.primary,
