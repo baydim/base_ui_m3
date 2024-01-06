@@ -82,7 +82,7 @@ class PesananView extends GetView<PesananController> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               SizedBox(
-                                width: Get.width / 3.5,
+                                width: Get.width / 3,
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8),
                                   child: const AspectRatio(

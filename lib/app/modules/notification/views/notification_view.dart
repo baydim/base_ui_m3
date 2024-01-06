@@ -73,11 +73,11 @@ class NotificationView extends GetView<NotificationController> {
                           children: [
                             Row(
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.notifications_rounded,
                                   size: 20,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 5,
                                 ),
                                 Text(
@@ -110,7 +110,7 @@ class NotificationView extends GetView<NotificationController> {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
                       Opacity(
