@@ -1,7 +1,7 @@
 name: base_ui_m3
 version: 1.0.0+1
 publish_to: none
-description: A new Flutter project.
+description: This is a Flutter application in UI development that refers to the base ThemeData of Flutter Material itself, from the use of textStyle to the selection of colors taken from the default ThemeData.
 environment: 
   sdk: '>=3.2.3 <4.0.0'
 
