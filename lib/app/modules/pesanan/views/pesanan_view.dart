@@ -65,7 +65,7 @@ class PesananView extends GetView<PesananController> {
               child: Card(
                 margin: const EdgeInsets.symmetric(
                   horizontal: 20,
-                  vertical: 4,
+                  vertical: 5,
                 ),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)),
@@ -257,6 +257,7 @@ class PesananView extends GetView<PesananController> {
                                               color: appColor(context)
                                                   .useScheme
                                                   .primary,
+                                              fontWeight: FontWeight.bold,
                                             ),
                                       ),
                                       Opacity(
@@ -296,12 +297,13 @@ class PesananView extends GetView<PesananController> {
                                               color: appColor(context)
                                                   .useScheme
                                                   .primary,
+                                              fontWeight: FontWeight.bold,
                                             ),
                                       ),
                                       Opacity(
                                         opacity: 0.5,
                                         child: Text(
-                                          "14:00",
+                                          "12:00",
                                           style: appFont(context)
                                               .bodySmall
                                               ?.copyWith(),

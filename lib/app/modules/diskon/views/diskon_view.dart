@@ -46,7 +46,7 @@ class DiskonView extends GetView<DiskonController> {
                   ),
                 ),
                 Positioned(
-                  bottom: 10,
+                  bottom: 5,
                   right: 10,
                   child: ElevatedButton.icon(
                     style: ButtonStyle(
@@ -98,7 +98,7 @@ class DiskonView extends GetView<DiskonController> {
                       Icons.done_all_rounded,
                       size: 20,
                     ),
-                    label: const Text("Claim"),
+                    label: const Text("Diambil"),
                   ),
                 )
               ],

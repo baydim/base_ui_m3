@@ -64,38 +64,61 @@ class NotificationView extends GetView<NotificationController> {
                     horizontal: 20,
                     vertical: 10,
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  child: Row(
                     children: [
-                      Row(
-                        children: [
-                          Text(
-                            "Pemesanan",
-                            style: appFont(context).bodyMedium?.copyWith(
-                                  fontWeight: FontWeight.bold,
+                      Expanded(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.notifications_rounded,
+                                  size: 20,
                                 ),
-                          ),
-                          const Spacer(),
-                          Opacity(
-                            opacity: 0.5,
-                            child: Text(
-                              "Sen, 24 Jun 2004 ~ 14:00",
-                              style: appFont(context).labelSmall,
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Text(
+                                  "Pemesanan",
+                                  style: appFont(context).bodyMedium?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                ),
+                                const Spacer(),
+                                Opacity(
+                                  opacity: 0.5,
+                                  child: Text(
+                                    "Sen, 24 Jun 2004 ~ 14:00",
+                                    style: appFont(context).labelSmall,
+                                    maxLines: 3,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                )
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "Terima kasih telah memilih [Nama Hotel] untuk menginap Anda. Kami senang dapat memberitahu Anda bahwa pemesanan kamar Anda telah berhasil dikonfirmasi.",
+                              style: appFont(context).bodySmall?.copyWith(),
                               maxLines: 3,
                               overflow: TextOverflow.ellipsis,
-                            ),
-                          )
-                        ],
+                            )
+                          ],
+                        ),
                       ),
-                      const SizedBox(
-                        height: 5,
+                      SizedBox(
+                        width: 5,
                       ),
-                      Text(
-                        "Terima kasih telah memilih [Nama Hotel] untuk menginap Anda. Kami senang dapat memberitahu Anda bahwa pemesanan kamar Anda telah berhasil dikonfirmasi.",
-                        style: appFont(context).bodySmall?.copyWith(),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
+                      Opacity(
+                        opacity: i == 0 ? 1 : 0,
+                        child: CircleAvatar(
+                          radius: 5,
+                          backgroundColor: appColor(context).useScheme.primary,
+                        ),
                       )
                     ],
                   ),

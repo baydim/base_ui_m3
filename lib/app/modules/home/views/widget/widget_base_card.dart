@@ -19,16 +19,28 @@ class WidgetBaseCard extends StatelessWidget {
           horizontal: 20,
           vertical: 5,
         ),
-        child: InkWell(
-          borderRadius: BorderRadius.circular(8),
-          onTap: () {
-            onTap;
-          },
-          child: AspectRatio(
-            aspectRatio: 16 / 9,
-            child:
-                ClipRRect(borderRadius: BorderRadius.circular(8), child: child),
-          ),
+        child: Stack(
+          children: [
+            AspectRatio(
+              aspectRatio: 16 / 9,
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8), child: child),
+            ),
+            Positioned.fill(
+              child: Material(
+                borderRadius: BorderRadius.circular(
+                  8,
+                ),
+                color: Colors.transparent,
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(8),
+                  onTap: () {
+                    onTap;
+                  },
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );
@@ -51,16 +63,28 @@ class WidgetBaseCardSecondary extends StatelessWidget {
         horizontal: 20,
         vertical: 5,
       ),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(8),
-        onTap: () {
-          onTap;
-        },
-        child: AspectRatio(
-          aspectRatio: 16 / 9,
-          child:
-              ClipRRect(borderRadius: BorderRadius.circular(8), child: child),
-        ),
+      child: Stack(
+        children: [
+          AspectRatio(
+            aspectRatio: 16 / 9,
+            child:
+                ClipRRect(borderRadius: BorderRadius.circular(8), child: child),
+          ),
+          Positioned.fill(
+            child: Material(
+              borderRadius: BorderRadius.circular(
+                8,
+              ),
+              color: Colors.transparent,
+              child: InkWell(
+                borderRadius: BorderRadius.circular(8),
+                onTap: () {
+                  onTap;
+                },
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
