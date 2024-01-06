@@ -116,7 +116,7 @@ class NotificationView extends GetView<NotificationController> {
                       Opacity(
                         opacity: i == 0 ? 1 : 0,
                         child: CircleAvatar(
-                          radius: 5,
+                          radius: 2.5,
                           backgroundColor: appColor(context).useScheme.primary,
                         ),
                       )

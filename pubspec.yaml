@@ -10,6 +10,8 @@ dependencies:
   get: 4.6.6
   flutter: 
     sdk: flutter
+  flutter_localizations: 
+    sdk: flutter
   shared_preferences: ^2.2.2
 
 

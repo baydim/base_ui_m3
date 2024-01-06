@@ -27,7 +27,7 @@ class WrapperMenuController extends GetxController {
       Get.back();
     }
     Future.delayed(
-      2.seconds,
+      1.seconds,
       () {
         Get.dialog(
           BackdropFilter(

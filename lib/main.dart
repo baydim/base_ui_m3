@@ -2,6 +2,7 @@ import 'package:base_ui_m3/app/modules/wrapper_menu/controllers/wrapper_menu_con
 import 'package:base_ui_m3/app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:get/get.dart';
 
@@ -34,7 +35,15 @@ class App extends StatelessWidget {
             Get.focusScope?.unfocus();
           },
           child: GetMaterialApp(
-            title: "Application",
+            localizationsDelegates: const [
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: const [
+              Locale('id', 'ID'),
+            ],
+            title: "BASE_UI_M3",
             initialRoute: AppPages.INITIAL,
             getPages: AppPages.routes,
             theme:
