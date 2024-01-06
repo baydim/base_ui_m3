@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -23,7 +26,53 @@ class WidgetCityRound extends StatelessWidget {
               children: [
                 InkWell(
                   borderRadius: BorderRadius.circular(5),
-                  onTap: () {},
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return BackdropFilter(
+                          filter: ImageFilter.blur(
+                            sigmaX: 2,
+                            sigmaY: 2,
+                          ),
+                          child: CupertinoAlertDialog(
+                            title: const Text("Izin Lokasi"),
+                            content: const Text(
+                              "Dengan memberikan izin akses lokasi, kami dapat menampilkan hotel-hotel terdekat.",
+                            ),
+                            actions: [
+                              ElevatedButton(
+                                style: const ButtonStyle(
+                                  backgroundColor: MaterialStatePropertyAll(
+                                      Colors.transparent),
+                                  elevation: MaterialStatePropertyAll(0),
+                                ),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Text(
+                                  "Kembali",
+                                ),
+                              ),
+                              ElevatedButton(
+                                style: const ButtonStyle(
+                                  backgroundColor: MaterialStatePropertyAll(
+                                      Colors.transparent),
+                                  elevation: MaterialStatePropertyAll(0),
+                                ),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Text(
+                                  "Izinkan",
+                                ),
+                              )
+                            ],
+                          ),
+                        );
+                      },
+                    );
+                  },
                   child: Container(
                     color: Colors.transparent,
                     width: 70,
