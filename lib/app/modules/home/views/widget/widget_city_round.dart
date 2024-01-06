@@ -38,33 +38,25 @@ class WidgetCityRound extends StatelessWidget {
                           child: CupertinoAlertDialog(
                             title: const Text("Izin Lokasi"),
                             content: const Text(
-                              "Dengan memberikan izin akses lokasi, kami dapat menampilkan hotel-hotel terdekat.",
+                              "Dengan memberikan izin akses lokasi, kami dapat menampilkan hotel dan penginapan terdekat untuk anda.",
                             ),
                             actions: [
-                              ElevatedButton(
-                                style: const ButtonStyle(
-                                  backgroundColor: MaterialStatePropertyAll(
-                                      Colors.transparent),
-                                  elevation: MaterialStatePropertyAll(0),
-                                ),
+                              CupertinoDialogAction(
                                 onPressed: () {
                                   Navigator.pop(context);
                                 },
-                                child: const Text(
+                                child: Text(
                                   "Kembali",
+                                  style: appFont(context).bodySmall,
                                 ),
                               ),
-                              ElevatedButton(
-                                style: const ButtonStyle(
-                                  backgroundColor: MaterialStatePropertyAll(
-                                      Colors.transparent),
-                                  elevation: MaterialStatePropertyAll(0),
-                                ),
+                              CupertinoDialogAction(
                                 onPressed: () {
                                   Navigator.pop(context);
                                 },
-                                child: const Text(
+                                child: Text(
                                   "Izinkan",
+                                  style: appFont(context).bodySmall,
                                 ),
                               )
                             ],
