@@ -69,7 +69,10 @@ ThemeData appTheme(BuildContext context) {
 }
 ```
 ## LIGHT MODE
-![LIGHT MODE](http://url/to/img.png)
+![LIGHT MODE](https://raw.githubusercontent.com/baydim/base_ui_m3/main/assets/images/light.webp)
+
+## DARK MODE
+![DARK MODE](https://raw.githubusercontent.com/baydim/base_ui_m3/main/assets/images/dark.webp)
 
 ## Getting Started
 
