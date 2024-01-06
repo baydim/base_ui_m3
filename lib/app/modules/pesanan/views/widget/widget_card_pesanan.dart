@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../theme/app_theme.dart';
+import '../../../../util/price_room_util.dart';
 import '../../../../util/room_image_util.dart';
 
 class WidgetCardPesanan extends StatelessWidget {
@@ -56,7 +57,7 @@ class WidgetCardPesanan extends StatelessWidget {
                                 style: appFont(context).labelSmall?.copyWith(),
                               ),
                               Text(
-                                "Rp140.000",
+                                "Rp${price()}",
                                 style: appFont(context).bodyLarge?.copyWith(
                                       fontWeight: FontWeight.bold,
                                     ),

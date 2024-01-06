@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../../../../theme/app_theme.dart';
 
@@ -7,6 +10,20 @@ class WidgetSaldo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var random = Random();
+    var minUang = 1000;
+    var maxUang = 90000000;
+
+    // Menghasilkan nilai acak antara minUang dan maxUang
+    var randomUang = minUang + random.nextInt(maxUang - minUang + 1);
+    var randomCoin = 1 + random.nextInt(1000 - 1 + 1);
+
+    var numberFormat = NumberFormat.currency(
+      locale: 'id_ID',
+      symbol: "",
+      decimalDigits: 0,
+    );
+
     return SliverToBoxAdapter(
       child: Card(
         margin: const EdgeInsets.symmetric(
@@ -49,14 +66,14 @@ class WidgetSaldo extends StatelessWidget {
                           height: 5,
                         ),
                         Text(
-                          "Rp100.000",
+                          "Rp${numberFormat.format(randomUang)}",
                           style: appFont(context).bodyLarge?.copyWith(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
                               ),
                         ),
                         Text(
-                          "100 CoinBase",
+                          "${numberFormat.format(randomCoin)} CoinBase",
                           style: appFont(context).labelSmall?.copyWith(
                                 color: Colors.white.withOpacity(0.8),
                               ),

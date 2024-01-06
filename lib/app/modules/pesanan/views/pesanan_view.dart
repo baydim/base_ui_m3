@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 import '../../../routes/app_pages.dart';
 import '../../../theme/app_theme.dart';
+import '../../../util/price_room_util.dart';
 import '../../../util/room_image_util.dart';
 import '../controllers/pesanan_controller.dart';
 import 'widget/widget_card_pesanan.dart';
@@ -161,7 +162,7 @@ class PesananView extends GetView<PesananController> {
                                                   ?.copyWith(),
                                             ),
                                             Text(
-                                              "Rp140.000",
+                                              "Rp${price()}",
                                               style: appFont(context)
                                                   .bodyLarge
                                                   ?.copyWith(
