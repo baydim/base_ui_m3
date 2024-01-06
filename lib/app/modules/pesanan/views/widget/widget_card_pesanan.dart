@@ -107,7 +107,7 @@ class WidgetCardPesanan extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              Spacer(),
+                              const Spacer(),
                               if (isWait)
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -261,7 +261,7 @@ class WidgetCardPesanan extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Text(

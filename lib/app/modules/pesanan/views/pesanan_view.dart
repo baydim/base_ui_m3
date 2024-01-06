@@ -61,13 +61,13 @@ class PesananView extends GetView<PesananController> {
           const SizedBox(
             height: 10,
           ),
-          WidgetCardPesanan(
+          const WidgetCardPesanan(
             isWait: false,
           ),
-          WidgetCardPesanan(
+          const WidgetCardPesanan(
             isWait: true,
           ),
-          WidgetCardPesanan(
+          const WidgetCardPesanan(
             isWait: true,
           ),
           const SizedBox(
