@@ -8,6 +8,12 @@ import 'package:get/get.dart';
 import 'app/routes/app_pages.dart';
 
 void main() {
+  SystemChrome.setPreferredOrientations(
+    [
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ],
+  );
   runApp(
     const App(),
   );
@@ -21,21 +27,6 @@ class App extends StatelessWidget {
     WrapperMenuController wrapperMenuController =
         Get.put(WrapperMenuController());
     return Obx(() {
-      SystemChrome.setPreferredOrientations(
-        [
-          DeviceOrientation.portraitUp,
-          DeviceOrientation.portraitDown,
-        ],
-      );
-
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          systemNavigationBarColor: appColor(context).useScheme.background,
-          systemNavigationBarIconBrightness: wrapperMenuController.isDark.value
-              ? Brightness.dark
-              : Brightness.light,
-        ),
-      );
       return GestureDetector(
         onTap: () {
           Get.focusScope?.unfocus();
