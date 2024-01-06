@@ -68,6 +68,8 @@ ThemeData appTheme(BuildContext context) {
   );
 }
 ```
+## LIGHT MODE
+![LIGHT MODE](http://url/to/img.png)
 
 ## Getting Started
 
