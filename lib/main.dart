@@ -35,6 +35,7 @@ class App extends StatelessWidget {
             Get.focusScope?.unfocus();
           },
           child: GetMaterialApp(
+            debugShowCheckedModeBanner: false,
             localizationsDelegates: const [
               GlobalMaterialLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
