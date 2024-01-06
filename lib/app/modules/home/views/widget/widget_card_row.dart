@@ -36,7 +36,8 @@ class _WidgetCardRowState extends State<WidgetCardRow> {
                     IntrinsicHeight(
                       child: Card(
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8)),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
                         elevation: 0,
                         color: appColor(context)
                             .useScheme

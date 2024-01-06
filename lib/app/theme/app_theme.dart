@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 TextTheme appFont(BuildContext context) {
@@ -26,6 +27,10 @@ class ColorApp {
 
 ThemeData appTheme(BuildContext context, {bool? useDark}) {
   return ThemeData(
+    cupertinoOverrideTheme: CupertinoThemeData(
+      brightness:
+          (useDark ?? false) == true ? Brightness.dark : Brightness.light,
+    ),
     appBarTheme: AppBarTheme(
       titleTextStyle: appFont(context).titleMedium?.copyWith(
             fontWeight: FontWeight.bold,

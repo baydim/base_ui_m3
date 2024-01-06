@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'app/routes/app_pages.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
     [
       DeviceOrientation.portraitUp,
@@ -26,20 +27,23 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     WrapperMenuController wrapperMenuController =
         Get.put(WrapperMenuController());
-    return Obx(() {
-      return GestureDetector(
-        onTap: () {
-          Get.focusScope?.unfocus();
-        },
-        child: GetMaterialApp(
-          title: "Application",
-          initialRoute: AppPages.INITIAL,
-          getPages: AppPages.routes,
-          theme: appTheme(context, useDark: wrapperMenuController.isDark.value),
-          darkTheme:
-              appTheme(context, useDark: wrapperMenuController.isDark.value),
-        ),
-      );
-    });
+    return Obx(
+      () {
+        return GestureDetector(
+          onTap: () {
+            Get.focusScope?.unfocus();
+          },
+          child: GetMaterialApp(
+            title: "Application",
+            initialRoute: AppPages.INITIAL,
+            getPages: AppPages.routes,
+            theme:
+                appTheme(context, useDark: wrapperMenuController.isDark.value),
+            darkTheme:
+                appTheme(context, useDark: wrapperMenuController.isDark.value),
+          ),
+        );
+      },
+    );
   }
 }
