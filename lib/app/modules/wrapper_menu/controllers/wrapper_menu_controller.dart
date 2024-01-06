@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../data/services/service_shared.dart';
-import '../../../theme/app_theme.dart';
 
 class WrapperMenuController extends GetxController {
   final indexPage = 0.obs;
@@ -24,11 +23,14 @@ class WrapperMenuController extends GetxController {
   }
 
   funcShowBanner() async {
-    Future.delayed(2.seconds, () {
-      showDialog(
-        context: Get.context!,
-        builder: (context) {
-          return BackdropFilter(
+    if (Get.isDialogOpen == true) {
+      Get.back();
+    }
+    Future.delayed(
+      2.seconds,
+      () {
+        Get.dialog(
+          BackdropFilter(
             filter: ImageFilter.blur(
               sigmaX: 2,
               sigmaY: 2,
@@ -55,7 +57,9 @@ class WrapperMenuController extends GetxController {
                         child: Material(
                           color: Colors.transparent,
                           child: InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Get.back();
+                            },
                           ),
                         ),
                       ),
@@ -63,10 +67,12 @@ class WrapperMenuController extends GetxController {
                         right: 0,
                         top: 0,
                         child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(
+                          onPressed: () {
+                            Get.back();
+                          },
+                          icon: const Icon(
                             Icons.cancel_rounded,
-                            color: appColor(context).useScheme.error,
+                            color: Colors.red,
                           ),
                         ),
                       )
@@ -75,10 +81,10 @@ class WrapperMenuController extends GetxController {
                 ),
               ),
             ),
-          );
-        },
-      );
-    });
+          ),
+        );
+      },
+    );
   }
 
   @override
