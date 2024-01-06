@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../theme/app_theme.dart';
+import '../../../../util/room_image_util.dart';
 
 class WidgetCardPesanan extends StatelessWidget {
   const WidgetCardPesanan({super.key, required this.isWait});
@@ -31,13 +32,11 @@ class WidgetCardPesanan extends StatelessWidget {
                         width: Get.width / 4,
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8),
-                          child: const AspectRatio(
+                          child: AspectRatio(
                             aspectRatio: 1,
                             child: FadeInImage(
-                              image: NetworkImage(
-                                "https://github.com/baydim/base_ui_m3/blob/main/assets/images/_98205cc4-2cdf-4ab9-809a-d66c75dbf890.jpeg?raw=true",
-                              ),
-                              placeholder: AssetImage(
+                              image: NetworkImage(roomRandomUtil()),
+                              placeholder: const AssetImage(
                                 "assets/images/peace.png",
                               ),
                               fit: BoxFit.cover,

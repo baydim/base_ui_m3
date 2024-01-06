@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../util/room_image_util.dart';
 import '../../home/views/widget/widget_base_card.dart';
 import '../controllers/diskon_controller.dart';
 
@@ -71,12 +72,12 @@ class DiskonView extends GetView<DiskonController> {
             },
             child: Stack(
               children: [
-                const Positioned.fill(
+                Positioned.fill(
                   child: FadeInImage(
                     image: NetworkImage(
-                      "https://th.bing.com/th/id/OIG.ez4AqOa6xASISU2SSAEP?w=1024&h=1024&rs=1&pid=ImgDetMain",
+                      promoRandomUtil(),
                     ),
-                    placeholder: AssetImage(
+                    placeholder: const AssetImage(
                       "assets/images/peace.png",
                     ),
                     fit: BoxFit.cover,

@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../util/room_image_util.dart';
 import '../controllers/home_controller.dart';
 import 'widget/widget_button_search.dart';
 import 'widget/widget_card_row.dart';
@@ -97,12 +98,10 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
           ),
-          const WidgetBaseCard(
+          WidgetBaseCard(
             child: FadeInImage(
-              image: NetworkImage(
-                "https://th.bing.com/th/id/OIG.23UClhMw42Uo7ZSE7kDo?pid=ImgGn",
-              ),
-              placeholder: AssetImage(
+              image: NetworkImage(promoRandomUtil()),
+              placeholder: const AssetImage(
                 "assets/images/peace.png",
               ),
               fit: BoxFit.cover,
@@ -182,12 +181,10 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
           ),
-          const WidgetBaseCard(
+          WidgetBaseCard(
             child: FadeInImage(
-              image: NetworkImage(
-                "https://th.bing.com/th/id/OIG.HaTwF4tamiGpeIImqJyN?w=1024&h=1024&rs=1&pid=ImgDetMain",
-              ),
-              placeholder: AssetImage(
+              image: NetworkImage(promoRandomUtil()),
+              placeholder: const AssetImage(
                 "assets/images/peace.png",
               ),
               fit: BoxFit.cover,
@@ -220,7 +217,7 @@ class _HomeViewState extends State<HomeView> {
           const WidgetBaseCard(
             child: FadeInImage(
               image: NetworkImage(
-                "https://th.bing.com/th/id/OIG.JtYANL_5rmLdPwsSikrF?pid=ImgGn",
+                "https://th.bing.com/th/id/OIG.h6bYFoWSFx6VC7gWJy0W?w=1024&h=1024&rs=1&pid=ImgDetMain",
               ),
               placeholder: AssetImage(
                 "assets/images/peace.png",

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../data/services/service_shared.dart';
+import '../../../util/room_image_util.dart';
 
 class WrapperMenuController extends GetxController {
   final indexPage = 0.obs;
@@ -44,11 +45,11 @@ class WrapperMenuController extends GetxController {
                   borderRadius: BorderRadius.circular(10),
                   child: Stack(
                     children: [
-                      const FadeInImage(
+                      FadeInImage(
                         image: NetworkImage(
-                          "https://th.bing.com/th/id/OIG.HaTwF4tamiGpeIImqJyN?w=1024&h=1024&rs=1&pid=ImgDetMain",
+                          promoRandomUtil(),
                         ),
-                        placeholder: AssetImage(
+                        placeholder: const AssetImage(
                           "assets/images/peace.png",
                         ),
                         fit: BoxFit.fitWidth,

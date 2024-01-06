@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 import '../../../routes/app_pages.dart';
 import '../../../theme/app_theme.dart';
+import '../../../util/room_image_util.dart';
 import '../controllers/pesanan_controller.dart';
 import 'widget/widget_card_pesanan.dart';
 
@@ -131,11 +132,10 @@ class PesananView extends GetView<PesananController> {
                                           borderRadius: BorderRadius.circular(
                                             8,
                                           ),
-                                          child: const FadeInImage(
-                                            image: NetworkImage(
-                                              "https://raw.githubusercontent.com/baydim/base_ui_m3/main/assets/images/_98205cc4-2cdf-4ab9-809a-d66c75dbf890.jpeg",
-                                            ),
-                                            placeholder: AssetImage(
+                                          child: FadeInImage(
+                                            image:
+                                                NetworkImage(roomRandomUtil()),
+                                            placeholder: const AssetImage(
                                               "assets/images/peace.png",
                                             ),
                                             fit: BoxFit.cover,
