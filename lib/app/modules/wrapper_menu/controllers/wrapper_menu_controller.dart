@@ -1,7 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../data/services/service_shared.dart';
+import '../../../theme/app_theme.dart';
 
 class WrapperMenuController extends GetxController {
   final indexPage = 0.obs;
@@ -17,11 +20,71 @@ class WrapperMenuController extends GetxController {
 
   funcInitial() async {
     isDark.value = await ServiceShared.getDark();
+    funcShowBanner();
+  }
+
+  funcShowBanner() async {
+    Future.delayed(2.seconds, () {
+      showDialog(
+        context: Get.context!,
+        builder: (context) {
+          return BackdropFilter(
+            filter: ImageFilter.blur(
+              sigmaX: 2,
+              sigmaY: 2,
+            ),
+            child: Dialog(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              shadowColor: Colors.transparent,
+              child: IntrinsicHeight(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Stack(
+                    children: [
+                      const FadeInImage(
+                        image: NetworkImage(
+                          "https://th.bing.com/th/id/OIG.HaTwF4tamiGpeIImqJyN?w=1024&h=1024&rs=1&pid=ImgDetMain",
+                        ),
+                        placeholder: AssetImage(
+                          "assets/images/peace.png",
+                        ),
+                        fit: BoxFit.fitWidth,
+                      ),
+                      Positioned(
+                        child: Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                            onTap: () {},
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        right: 0,
+                        top: 0,
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.cancel_rounded,
+                            color: appColor(context).useScheme.error,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
+      );
+    });
   }
 
   @override
   void onInit() {
     funcInitial();
+
     super.onInit();
   }
 }

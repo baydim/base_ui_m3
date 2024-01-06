@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:base_ui_m3/app/modules/bookmark/views/bookmark_view.dart';
 import 'package:base_ui_m3/app/modules/diskon/views/diskon_view.dart';
 import 'package:base_ui_m3/app/modules/home/views/home_view.dart';
@@ -13,6 +15,7 @@ class WrapperMenuView extends GetView<WrapperMenuController> {
   const WrapperMenuView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    log("RENDER");
     return Obx(() {
       return Scaffold(
         resizeToAvoidBottomInset: false,
