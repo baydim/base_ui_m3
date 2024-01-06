@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import '../../../../theme/app_theme.dart';
@@ -50,7 +52,7 @@ class WidgetBaseCard extends StatelessWidget {
 class WidgetBaseCardSecondary extends StatelessWidget {
   const WidgetBaseCardSecondary({super.key, this.child, this.onTap});
   final Widget? child;
-  final Function? onTap;
+  final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -78,9 +80,7 @@ class WidgetBaseCardSecondary extends StatelessWidget {
               color: Colors.transparent,
               child: InkWell(
                 borderRadius: BorderRadius.circular(8),
-                onTap: () {
-                  onTap;
-                },
+                onTap: onTap,
               ),
             ),
           )

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:base_ui_m3/app/routes/app_pages.dart';
 import 'package:base_ui_m3/app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +34,41 @@ class DiskonView extends GetView<DiskonController> {
       body: ListView(
         children: [
           WidgetBaseCardSecondary(
+            onTap: () {
+              log("JOSS");
+              try {
+                if (Get.isSnackbarOpen == true) {
+                  Get.closeCurrentSnackbar();
+                }
+                Get.rawSnackbar(
+                  icon: Icon(
+                    Icons.done_all_rounded,
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? Colors.white
+                        : Colors.black,
+                  ),
+                  messageText: Text(
+                    "Berhasil Claim Kupon",
+                    style: appFont(context).bodySmall?.copyWith(
+                          color:
+                              Theme.of(context).brightness == Brightness.light
+                                  ? Colors.white
+                                  : Colors.black,
+                        ),
+                  ),
+                  borderRadius: 5,
+                  backgroundColor: appColor(context).useScheme.primary,
+                  margin: const EdgeInsets.fromLTRB(
+                    20,
+                    0,
+                    20,
+                    40,
+                  ),
+                );
+              } catch (e) {
+                log(e.toString());
+              }
+            },
             child: Stack(
               children: [
                 const Positioned.fill(
@@ -63,37 +100,7 @@ class DiskonView extends GetView<DiskonController> {
                         appFont(context).bodySmall,
                       ),
                     ),
-                    onPressed: () {
-                      if (Get.isSnackbarOpen == true) {
-                        Get.closeCurrentSnackbar();
-                      }
-                      Get.rawSnackbar(
-                        icon: Icon(
-                          Icons.done_all_rounded,
-                          color:
-                              Theme.of(context).brightness == Brightness.light
-                                  ? Colors.white
-                                  : Colors.black,
-                        ),
-                        messageText: Text(
-                          "Berhasil Claim Kupon",
-                          style: appFont(context).bodySmall?.copyWith(
-                                color: Theme.of(context).brightness ==
-                                        Brightness.light
-                                    ? Colors.white
-                                    : Colors.black,
-                              ),
-                        ),
-                        borderRadius: 5,
-                        backgroundColor: appColor(context).useScheme.primary,
-                        margin: const EdgeInsets.fromLTRB(
-                          20,
-                          0,
-                          20,
-                          40,
-                        ),
-                      );
-                    },
+                    onPressed: () {},
                     icon: const Icon(
                       Icons.done_all_rounded,
                       size: 20,
