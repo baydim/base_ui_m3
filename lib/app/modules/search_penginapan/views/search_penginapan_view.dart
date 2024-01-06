@@ -161,59 +161,67 @@ class SearchPenginapanView extends GetView<SearchPenginapanController> {
                   const SizedBox(
                     height: 10,
                   ),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 20,
-            ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: SizedBox(
-                    height: 45,
-                    child: SearchBar(
-                      textStyle: MaterialStatePropertyAll(
-                        appFont(context).bodySmall,
-                      ),
-                      padding: const MaterialStatePropertyAll(
-                        EdgeInsets.symmetric(
-                          vertical: 0,
-                          horizontal: 20,
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: SizedBox(
+                          height: 45,
+                          child: SearchBar(
+                            textStyle: MaterialStatePropertyAll(
+                              appFont(context).bodySmall,
+                            ),
+                            padding: const MaterialStatePropertyAll(
+                              EdgeInsets.symmetric(
+                                vertical: 0,
+                                horizontal: 20,
+                              ),
+                            ),
+                            hintText: "Cari Lokasi...",
+                            leading: Icon(
+                              Icons.location_on_rounded,
+                              color: appColor(context).useScheme.primary,
+                              size: 20,
+                            ),
+                            elevation: const MaterialStatePropertyAll(0),
+                            backgroundColor: MaterialStatePropertyAll(
+                              appColor(context)
+                                  .useScheme
+                                  .inversePrimary
+                                  .withOpacity(0.2),
+                            ),
+                          ),
                         ),
                       ),
-                      hintText: "Cari Lokasi...",
-                      leading: Icon(
-                        Icons.location_on_rounded,
-                        color: appColor(context).useScheme.primary,
-                        size: 20,
+                      const SizedBox(
+                        width: 5,
                       ),
-                      elevation: const MaterialStatePropertyAll(0),
-                      backgroundColor: MaterialStatePropertyAll(
-                        appColor(context)
-                            .useScheme
-                            .inversePrimary
-                            .withOpacity(0.2),
+                      FloatingActionButton.small(
+                        elevation: 0,
+                        heroTag: "1",
+                        onPressed: () {},
+                        child: Icon(
+                          Icons.map_rounded,
+                          color: appColor(context).useScheme.primary,
+                          size: 20,
+                        ),
                       ),
-                    ),
+                      FloatingActionButton.small(
+                        elevation: 0,
+                        heroTag: "2",
+                        onPressed: () {},
+                        child: Icon(
+                          Icons.my_location_outlined,
+                          color: appColor(context).useScheme.primary,
+                          size: 20,
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                FloatingActionButton.small(
-                  onPressed: () {},
-                  child: Icon(Icons.map_rounded),
-                ),
-                FloatingActionButton.small(
-                  onPressed: () {},
-                  child: Icon(
-                    Icons.my_location_outlined,
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],
