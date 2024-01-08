@@ -75,7 +75,6 @@ ThemeData appTheme(BuildContext context) {
 ![DARK MODE](https://raw.githubusercontent.com/baydim/base_ui_m3/main/assets/images/dark.webp)
 
 [APK BASE](https://drive.google.com/drive/folders/1_5-TCLEwO30gBgnmhu2WHHZOuzRUd-wn?usp=drive_link)
-------
 [WEB BASE](https://base-ui-m3-web.vercel.app/)
 
 ## Getting Started
