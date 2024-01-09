@@ -81,9 +81,9 @@ ThemeData appTheme(BuildContext context) {
 <!-- https://cdn-icons-png.flaticon.com/512/888/888839.png -->
 
 ## MODE DEMO
-<table>
+<table style="text-align: center;">
     <tr>
-        <td>
+        <td style="text-align: center;">
             <a href="https://drive.google.com/drive/folders/1_5-TCLEwO30gBgnmhu2WHHZOuzRUd-wn?usp=drive_link">
                 <img src="https://cdn-icons-png.flaticon.com/512/888/888839.png" alt="APK BASE" width="50">
             </a>
@@ -91,7 +91,7 @@ ThemeData appTheme(BuildContext context) {
         </td>
         <td width="50px">
         </td>
-        <td>
+        <td style="text-align: center;">
             <a href="https://base-ui-m3-web.vercel.app/">
                 <img src="https://cdn-icons-png.flaticon.com/512/10453/10453141.png" alt="WEB BASE" width="50">
             </a>
