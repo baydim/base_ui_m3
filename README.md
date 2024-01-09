@@ -80,7 +80,7 @@ ThemeData appTheme(BuildContext context) {
 
 <!-- https://cdn-icons-png.flaticon.com/512/888/888839.png -->
 
-## MODE DEMO
+## DEMO MODE
 <table style="text-align: center;">
     <tr>
         <td style="text-align: center;">
