@@ -96,6 +96,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_web_frame:
+    dependency: "direct main"
+    description:
+      name: flutter_web_frame
+      sha256: cc5a88019a27d92df9cf60bb6c2d80b9a6adb512c89d7c0ff99bb5975b5671c0
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   flutter_web_plugins:
     dependency: transitive
     description: flutter

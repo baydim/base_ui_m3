@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,6 +12,12 @@ class WrapperMenuController extends GetxController {
   final pageController = PageController().obs;
 
   final isDark = false.obs;
+  Size size(BuildContext context) => Size(
+        475.0,
+        MediaQuery.of(context).size.height + 1,
+      );
+
+  final isWeb = kIsWeb.obs;
 
   funcToDark({required bool useDark}) async {
     isDark.value = !isDark.value;
