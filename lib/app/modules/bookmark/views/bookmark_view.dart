@@ -86,8 +86,8 @@ class BookmarkView extends GetView<BookmarkController> {
                         Expanded(
                           flex: 2,
                           child: Container(
-                            width: Get.width,
-                            height: Get.width / 3,
+                            width: MediaQuery.of(context).size.width,
+                            height: MediaQuery.of(context).size.width / 3,
                             decoration: BoxDecoration(
                               color: appColor(context).useScheme.primary,
                               borderRadius: BorderRadius.circular(
@@ -177,7 +177,7 @@ class BookmarkView extends GetView<BookmarkController> {
             ),
           ),
           SizedBox(
-            width: Get.width,
+            width: MediaQuery.of(context).size.width,
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -207,8 +207,12 @@ class BookmarkView extends GetView<BookmarkController> {
                                     Expanded(
                                       flex: 2,
                                       child: Container(
-                                        width: Get.width / 1.8,
-                                        height: Get.width / 3,
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                1.8,
+                                        height:
+                                            MediaQuery.of(context).size.width /
+                                                3,
                                         decoration: BoxDecoration(
                                           color: appColor(context)
                                               .useScheme

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../theme/app_theme.dart';
 import '../util/price_room_util.dart';
@@ -10,6 +9,7 @@ class CardHotel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Row(
       children: [
         IntrinsicHeight(
@@ -28,8 +28,8 @@ class CardHotel extends StatelessWidget {
                     Expanded(
                       flex: 2,
                       child: Container(
-                        width: Get.width / 1.8,
-                        height: Get.width / 3,
+                        width: size.width / 1.8,
+                        height: size.width / 3,
                         decoration: BoxDecoration(
                           color: appColor(context).useScheme.primary,
                           borderRadius: BorderRadius.circular(

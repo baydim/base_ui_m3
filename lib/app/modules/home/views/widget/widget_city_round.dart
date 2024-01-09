@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../../../theme/app_theme.dart';
 
@@ -14,7 +13,7 @@ class WidgetCityRound extends StatelessWidget {
     return SliverToBoxAdapter(
       child: Container(
         color: Colors.transparent,
-        width: Get.width,
+        width: MediaQuery.of(context).size.width,
         height: 42.5 * 2.0,
         child: ListView(
           scrollDirection: Axis.horizontal,

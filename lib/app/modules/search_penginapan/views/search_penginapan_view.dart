@@ -199,7 +199,7 @@ class SearchPenginapanView extends GetView<SearchPenginapanController> {
                         ),
                       ),
                       const SizedBox(
-                        width: 5,
+                        width: 10,
                       ),
                       FloatingActionButton.small(
                         elevation: 0,
@@ -210,6 +210,9 @@ class SearchPenginapanView extends GetView<SearchPenginapanController> {
                           color: appColor(context).useScheme.primary,
                           size: 20,
                         ),
+                      ),
+                      const SizedBox(
+                        width: 10,
                       ),
                       FloatingActionButton.small(
                         elevation: 0,

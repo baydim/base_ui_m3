@@ -7,10 +7,11 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_frame/flutter_web_frame.dart';
 
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app/routes/app_pages.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
     [
@@ -18,6 +19,7 @@ void main() {
       DeviceOrientation.portraitDown,
     ],
   );
+  await SharedPreferences.getInstance();
   runApp(
     const App(),
   );
@@ -30,62 +32,71 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     WrapperMenuController wrapperMenuController =
         Get.put(WrapperMenuController());
-    return Obx(
-      () {
-        return GestureDetector(
-          onTap: () {
-            Get.focusScope?.unfocus();
-          },
-          child: GetMaterialApp(
-            debugShowCheckedModeBanner: false,
-            localizationsDelegates: const [
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            supportedLocales: const [
-              Locale('id', 'ID'),
-            ],
-            title: "BASE_UI_M3",
-            initialRoute: AppPages.INITIAL,
-            getPages: AppPages.routes,
-            theme:
-                appTheme(context, useDark: wrapperMenuController.isDark.value),
-            darkTheme:
-                appTheme(context, useDark: wrapperMenuController.isDark.value),
-          ),
-        );
-      },
-    );
 
-    //     Obx(() {
-    //   return FlutterWebFrame(
-    //     builder: (_) {
-    //       return GetMaterialApp(
-    //         debugShowCheckedModeBanner: false,
-    //         localizationsDelegates: const [
-    //           GlobalMaterialLocalizations.delegate,
-    //           GlobalWidgetsLocalizations.delegate,
-    //           GlobalCupertinoLocalizations.delegate,
-    //         ],
-    //         supportedLocales: const [
-    //           Locale('id', 'ID'),
-    //         ],
-    //         title: "BASE_UI_M3",
-    //         initialRoute: AppPages.INITIAL,
-    //         getPages: AppPages.routes,
-    //         theme:
-    //             appTheme(context, useDark: wrapperMenuController.isDark.value),
-    //         darkTheme:
-    //             appTheme(context, useDark: wrapperMenuController.isDark.value),
-    //       );
-    //     },
-    //     maximumSize: wrapperMenuController.size(context),
-    //     enabled: wrapperMenuController.isWeb.value,
-    //     backgroundColor: appColor(context).useScheme.background,
-    //     clipBehavior: Clip.antiAlias,
-    //   );
-    // });
+    return !kIsWeb
+        ? Obx(
+            () {
+              return GestureDetector(
+                onTap: () {
+                  Get.focusScope?.unfocus();
+                },
+                child: GetMaterialApp(
+                  debugShowCheckedModeBanner: false,
+                  localizationsDelegates: const [
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                  ],
+                  supportedLocales: const [
+                    Locale('id', 'ID'),
+                  ],
+                  title: "BASE_UI_M3",
+                  initialRoute: AppPages.INITIAL,
+                  getPages: AppPages.routes,
+                  theme: appTheme(context,
+                      useDark: wrapperMenuController.isDark.value),
+                  darkTheme: appTheme(context,
+                      useDark: wrapperMenuController.isDark.value),
+                ),
+              );
+            },
+          )
+        : Obx(() {
+            return Theme(
+              data: appTheme(
+                context,
+                useDark: wrapperMenuController.isDark.value,
+              ),
+              child: FlutterWebFrame(
+                builder: (_) {
+                  return GetMaterialApp(
+                    debugShowCheckedModeBanner: false,
+                    localizationsDelegates: const [
+                      GlobalMaterialLocalizations.delegate,
+                      GlobalWidgetsLocalizations.delegate,
+                      GlobalCupertinoLocalizations.delegate,
+                    ],
+                    supportedLocales: const [
+                      Locale('id', 'ID'),
+                    ],
+                    title: "BASE_UI_M3",
+                    initialRoute: AppPages.INITIAL,
+                    getPages: AppPages.routes,
+                    theme: appTheme(context,
+                        useDark: wrapperMenuController.isDark.value),
+                    darkTheme: appTheme(context,
+                        useDark: wrapperMenuController.isDark.value),
+                  );
+                },
+                maximumSize: wrapperMenuController.size.value,
+                enabled: kIsWeb,
+                backgroundColor: wrapperMenuController.isDark.value
+                    ? Colors.black
+                    : Colors.white,
+                clipBehavior: Clip.antiAlias,
+              ),
+            );
+          });
 
     ///
     ///

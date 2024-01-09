@@ -62,6 +62,7 @@ ThemeData appTheme(BuildContext context, {bool? useDark}) {
       brightness:
           (useDark ?? false) == true ? Brightness.dark : Brightness.light,
     ),
+    brightness: (useDark ?? false) == true ? Brightness.dark : Brightness.light,
     useMaterial3: true,
   );
 }

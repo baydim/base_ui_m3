@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../../../theme/app_theme.dart';
 import '../../../../widget/card_hotel.dart';
@@ -23,7 +22,7 @@ class _WidgetCardRowState extends State<WidgetCardRow> {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: SizedBox(
-        width: Get.width,
+        width: MediaQuery.of(context).size.width,
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../../../theme/app_theme.dart';
 import '../../../../util/price_room_util.dart';
@@ -30,7 +29,7 @@ class WidgetCardPesanan extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SizedBox(
-                        width: Get.width / 4,
+                        width: MediaQuery.of(context).size.width / 4,
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: AspectRatio(
