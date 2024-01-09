@@ -2,7 +2,7 @@
 
 This is a Flutter application in UI development that refers to the base ThemeData of Flutter Material itself, from the use of textStyle to the selection of colors taken from the default ThemeData.
 
-
+### core code
 ```dart
 /// this file on 
 /// lib/app/theme/app_theme.dart
@@ -68,6 +68,107 @@ ThemeData appTheme(BuildContext context) {
   );
 }
 ```
+
+
+### implement code
+
+```dart
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+    [
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ],
+  );
+  await SharedPreferences.getInstance();
+  runApp(
+    const App(),
+  );
+}
+
+class App extends StatelessWidget {
+  const App({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    WrapperMenuController wrapperMenuController =
+        Get.put(WrapperMenuController());
+
+    return !kIsWeb
+        ? Obx(
+            () {
+              return GestureDetector(
+                onTap: () {
+                  Get.focusScope?.unfocus();
+                },
+                child: GetMaterialApp(
+                  debugShowCheckedModeBanner: false,
+                  localizationsDelegates: const [
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                  ],
+                  supportedLocales: const [
+                    Locale('id', 'ID'),
+                  ],
+                  title: "BASE_UI_M3",
+                  initialRoute: AppPages.INITIAL,
+                  getPages: AppPages.routes,
+                  theme: appTheme(context,
+                      useDark: wrapperMenuController.isDark.value),
+                  darkTheme: appTheme(context,
+                      useDark: wrapperMenuController.isDark.value),
+                ),
+              );
+            },
+          )
+        : Obx(() {
+            return Theme(
+              data: appTheme(
+                context,
+                useDark: wrapperMenuController.isDark.value,
+              ),
+              child: FlutterWebFrame(
+                builder: (_) {
+                  return GetMaterialApp(
+                    debugShowCheckedModeBanner: false,
+                    localizationsDelegates: const [
+                      GlobalMaterialLocalizations.delegate,
+                      GlobalWidgetsLocalizations.delegate,
+                      GlobalCupertinoLocalizations.delegate,
+                    ],
+                    supportedLocales: const [
+                      Locale('id', 'ID'),
+                    ],
+                    title: "BASE_UI_M3",
+                    initialRoute: AppPages.INITIAL,
+                    getPages: AppPages.routes,
+                    theme: appTheme(context,
+                        useDark: wrapperMenuController.isDark.value),
+                    darkTheme: appTheme(context,
+                        useDark: wrapperMenuController.isDark.value),
+                  );
+                },
+                maximumSize: wrapperMenuController.size.value,
+                enabled: kIsWeb,
+                backgroundColor: wrapperMenuController.isDark.value
+                    ? Colors.black
+                    : Colors.white,
+                clipBehavior: Clip.antiAlias,
+              ),
+            );
+          });
+
+    ///
+    ///
+    ///
+    ///
+  }
+}
+
+```
+
 ## LIGHT MODE
 ![LIGHT MODE](https://raw.githubusercontent.com/baydim/base_ui_m3/main/assets/images/light.webp)
 
