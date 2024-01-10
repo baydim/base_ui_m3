@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:base_ui_m3/app/util/room_image_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'package:get/get.dart';
 
@@ -218,7 +217,7 @@ class DetailHotelView extends GetView<DetailHotelController> {
                     height: 10,
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                       horizontal: 20,
                     ),
                     child: Text(
@@ -229,7 +228,7 @@ class DetailHotelView extends GetView<DetailHotelController> {
                     ),
                   ),
                   const SizedBox(
-                    height: 0,
+                    height: 2.5,
                   ),
                   SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
