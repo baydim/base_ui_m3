@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:base_ui_m3/app/modules/home/views/widget/widget_base_card.dart';
 import 'package:base_ui_m3/app/util/room_image_util.dart';
 import 'package:flutter/material.dart';
 
@@ -44,7 +43,7 @@ class DetailHotelView extends GetView<DetailHotelController> {
                                     image: NetworkImage(
                                       roomRandomUtil(),
                                     ),
-                                    placeholder: AssetImage(
+                                    placeholder: const AssetImage(
                                       "assets/images/peace.png",
                                     ),
                                     fit: BoxFit.cover,
@@ -133,14 +132,14 @@ class DetailHotelView extends GetView<DetailHotelController> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 children: [
-                  FlutterLogo(
+                  const FlutterLogo(
                     size: 20,
                   ),
                   const SizedBox(
@@ -154,7 +153,7 @@ class DetailHotelView extends GetView<DetailHotelController> {
                           color: appColor(context).useScheme.primary,
                         ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   Opacity(
@@ -200,7 +199,7 @@ class DetailHotelView extends GetView<DetailHotelController> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Card(
@@ -214,18 +213,18 @@ class DetailHotelView extends GetView<DetailHotelController> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
+                  const Padding(
+                    padding: EdgeInsets.symmetric(
                       horizontal: 20,
                     ),
                     child: Text(
                       "Komentar",
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 0,
                   ),
                   SingleChildScrollView(
@@ -234,17 +233,17 @@ class DetailHotelView extends GetView<DetailHotelController> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             width: 20,
                           ),
                           for (var i = 0; i < Random().nextInt(50); i++)
                             cardCommentar(context),
-                          SizedBox(
+                          const SizedBox(
                             width: 20,
                           ),
                         ],
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                 ],
@@ -301,7 +300,7 @@ Widget cardCommentar(BuildContext context) {
                     ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 2.5,
             ),
             Text(
