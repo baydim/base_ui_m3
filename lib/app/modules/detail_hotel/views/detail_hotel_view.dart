@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:base_ui_m3/app/util/room_image_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:get/get.dart';
 
@@ -140,7 +141,7 @@ class DetailHotelView extends GetView<DetailHotelController> {
               child: Row(
                 children: [
                   const FlutterLogo(
-                    size: 20,
+                    size: 15,
                   ),
                   const SizedBox(
                     width: 10,
@@ -149,7 +150,7 @@ class DetailHotelView extends GetView<DetailHotelController> {
                     double.parse((random.nextDouble() * (10.0 - 1.0) + 1.0)
                             .toStringAsFixed(1))
                         .toString(),
-                    style: appFont(context).labelSmall?.copyWith(
+                    style: appFont(context).bodyMedium?.copyWith(
                           color: appColor(context).useScheme.primary,
                         ),
                   ),
@@ -160,7 +161,7 @@ class DetailHotelView extends GetView<DetailHotelController> {
                     opacity: 0.5,
                     child: Text(
                       "(${random.nextInt(500) + 1})",
-                      style: appFont(context).labelSmall?.copyWith(),
+                      style: appFont(context).bodyMedium?.copyWith(),
                     ),
                   ),
                   Padding(
@@ -216,12 +217,15 @@ class DetailHotelView extends GetView<DetailHotelController> {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.symmetric(
                       horizontal: 20,
                     ),
                     child: Text(
                       "Komentar",
+                      style: appFont(context).bodyMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
                   ),
                   const SizedBox(
@@ -278,6 +282,8 @@ Widget cardCommentar(BuildContext context) {
     child: ConstrainedBox(
       constraints: BoxConstraints(
         maxWidth: MediaQuery.of(context).size.width / 2,
+        maxHeight: MediaQuery.of(context).size.width / 4,
+        minHeight: MediaQuery.of(context).size.width / 4 - 1,
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(
@@ -303,14 +309,18 @@ Widget cardCommentar(BuildContext context) {
             const SizedBox(
               height: 2.5,
             ),
-            Text(
-              data["komentar"] ?? "--",
-              style: appFont(context).labelSmall?.copyWith(
-                    color: appColor(context).useScheme.brightness ==
-                            Brightness.dark
-                        ? Colors.black
-                        : Colors.white,
-                  ),
+            Expanded(
+              child: Text(
+                data["komentar"] ?? "--",
+                overflow: TextOverflow.ellipsis,
+                maxLines: 3,
+                style: appFont(context).labelSmall?.copyWith(
+                      color: appColor(context).useScheme.brightness ==
+                              Brightness.dark
+                          ? Colors.black
+                          : Colors.white,
+                    ),
+              ),
             ),
           ],
         ),
