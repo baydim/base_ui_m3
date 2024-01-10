@@ -14,6 +14,8 @@ abstract class Routes {
   static const BOOKMARK = _Paths.BOOKMARK;
   static const NOTIFICATION = _Paths.NOTIFICATION;
   static const DETAIL_NOTIF = _Paths.DETAIL_NOTIF;
+  static const DETAIL_HOTEL = _Paths.DETAIL_HOTEL;
+  static const DETAIL_ROOM = _Paths.DETAIL_ROOM;
 }
 
 abstract class _Paths {
@@ -27,4 +29,6 @@ abstract class _Paths {
   static const BOOKMARK = '/bookmark';
   static const NOTIFICATION = '/notification';
   static const DETAIL_NOTIF = '/detail-notif';
+  static const DETAIL_HOTEL = '/detail-hotel';
+  static const DETAIL_ROOM = '/detail-room';
 }

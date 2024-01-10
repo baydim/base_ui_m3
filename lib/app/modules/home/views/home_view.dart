@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 import '../../../util/room_image_util.dart';
 import '../controllers/home_controller.dart';
 import 'widget/widget_button_search.dart';
-import 'widget/widget_card_row.dart';
+import '../../../widget/widget_card_row.dart';
 import 'widget/widget_city_round.dart';
 
 class HomeView extends StatefulWidget {

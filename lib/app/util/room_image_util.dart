@@ -1,6 +1,8 @@
 import 'dart:developer';
 import 'dart:math' as math;
 
+import 'package:flutter/foundation.dart';
+
 String roomRandomUtil() {
   var url = [
     "https://th.bing.com/th/id/OIG.H3F5E6PmS3.1wBuodwHV?w=1024&h=1024&rs=1&pid=ImgDetMain",
@@ -34,7 +36,6 @@ String promoRandomUtil() {
     "https://th.bing.com/th/id/OIG.HaTwF4tamiGpeIImqJyN?w=1024&h=1024&rs=1&pid=ImgDetMain",
     "https://th.bing.com/th/id/OIG.23UClhMw42Uo7ZSE7kDo?pid=ImgGn",
     "https://th.bing.com/th/id/OIG.HaTwF4tamiGpeIImqJyN?w=1024&h=1024&rs=1&pid=ImgDetMain",
-    "https://github.com/baydim/base_ui_m3/blob/main/assets/images/_0d3f9f78-2345-4c1b-8119-a5c367bf7d48.jpeg?raw=true",
     "https://th.bing.com/th/id/OIG.JtYANL_5rmLdPwsSikrF?pid=ImgGn",
     "https://th.bing.com/th/id/OIG..8TrmdZ9p7HcFxmaYq.M?w=1024&h=1024&rs=1&pid=ImgDetMain",
     "https://th.bing.com/th/id/OIG.ufTEtDgdYGz70Rh6N9tB?pid=ImgGn",
@@ -48,4 +49,60 @@ String promoRandomUtil() {
 
   var randomUrl = url[randomIndex];
   return randomUrl;
+}
+
+String nameRandomTypeUtil() {
+  var url = [
+    "Hotel",
+    "Kost",
+    "Guest house",
+  ];
+
+  var random = math.Random();
+  var randomIndex = random.nextInt(url.length);
+  log(randomIndex.toString());
+
+  var randomUrl = url[randomIndex];
+  return randomUrl;
+}
+
+Map<String, String> randomComment() {
+  List<String> names = [
+    "Alicia",
+    "Budi",
+    "Cindy",
+    "Denny",
+    "Eka",
+    "Farhan",
+    "Grace",
+    "Hendri",
+    "Ika",
+    "Joko"
+  ];
+  List<String> comments = [
+    "Pengalaman yang luar biasa! Stafnya sangat ramah dan fasilitasnya sangat baik.",
+    "Hotel ini memiliki lokasi yang fantastis, sangat nyaman untuk menjelajahi kota.",
+    "Kamar bersih dan nyaman. Saya menikmati menginap di sini.",
+    "Pemandangan indah dari kamar. Saya pasti akan kembali.",
+    "Pelayanannya luar biasa. Puji bagi staf hotel!",
+    "Makanan lezat di restoran hotel. Saya sangat merekomendasikannya.",
+    "Kamar luas dan terdekorasi dengan baik. Sempurna untuk menghabiskan waktu santai.",
+    "Fasilitas yang disediakan melebihi harapan saya.",
+    "Proses check-in dan check-out yang lancar. Sangat efisien.",
+    "Saya menghabiskan waktu yang indah di hotel ini. Semuanya sempurna.",
+  ];
+
+  math.Random random = math.Random();
+
+  String name = names[random.nextInt(names.length)];
+  String comment = comments[random.nextInt(comments.length)];
+
+  Map<String, String> review = {"nama": name, "komentar": comment};
+
+  // Menampilkan komentar yang dihasilkan (opsional)
+  if (kDebugMode) {
+    print("Pengguna ${review['nama']} berkata - \"${review['komentar']}\"");
+  }
+
+  return review;
 }

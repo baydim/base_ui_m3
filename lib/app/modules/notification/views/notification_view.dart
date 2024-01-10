@@ -73,9 +73,10 @@ class NotificationView extends GetView<NotificationController> {
                           children: [
                             Row(
                               children: [
-                                const Icon(
+                                Icon(
                                   Icons.notifications_rounded,
                                   size: 20,
+                                  color: appColor(context).useScheme.primary,
                                 ),
                                 const SizedBox(
                                   width: 5,
@@ -84,6 +85,8 @@ class NotificationView extends GetView<NotificationController> {
                                   "Pemesanan",
                                   style: appFont(context).bodyMedium?.copyWith(
                                         fontWeight: FontWeight.bold,
+                                        color:
+                                            appColor(context).useScheme.primary,
                                       ),
                                 ),
                                 const Spacer(),
@@ -101,11 +104,14 @@ class NotificationView extends GetView<NotificationController> {
                             const SizedBox(
                               height: 5,
                             ),
-                            Text(
-                              "Terima kasih telah memilih [Nama Hotel] untuk menginap Anda. Kami senang dapat memberitahu Anda bahwa pemesanan kamar Anda telah berhasil dikonfirmasi.",
-                              style: appFont(context).bodySmall?.copyWith(),
-                              maxLines: 3,
-                              overflow: TextOverflow.ellipsis,
+                            Opacity(
+                              opacity: 0.5,
+                              child: Text(
+                                "Terima kasih telah memilih [Nama Hotel] untuk menginap Anda. Kami senang dapat memberitahu Anda bahwa pemesanan kamar Anda telah berhasil dikonfirmasi.",
+                                style: appFont(context).labelSmall?.copyWith(),
+                                maxLines: 3,
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             )
                           ],
                         ),
@@ -116,7 +122,7 @@ class NotificationView extends GetView<NotificationController> {
                       Opacity(
                         opacity: i == 0 ? 1 : 0,
                         child: CircleAvatar(
-                          radius: 2.5,
+                          radius: 4,
                           backgroundColor: appColor(context).useScheme.primary,
                         ),
                       )

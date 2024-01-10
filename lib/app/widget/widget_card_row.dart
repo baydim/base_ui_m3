@@ -2,8 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import '../../../../theme/app_theme.dart';
-import '../../../../widget/card_hotel.dart';
+import '../theme/app_theme.dart';
+import 'card_hotel.dart';
 
 class WidgetCardRow extends StatefulWidget {
   const WidgetCardRow({super.key});

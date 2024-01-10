@@ -2,8 +2,12 @@ import 'package:get/get.dart';
 
 import '../modules/bookmark/bindings/bookmark_binding.dart';
 import '../modules/bookmark/views/bookmark_view.dart';
+import '../modules/detail_hotel/bindings/detail_hotel_binding.dart';
+import '../modules/detail_hotel/views/detail_hotel_view.dart';
 import '../modules/detail_notif/bindings/detail_notif_binding.dart';
 import '../modules/detail_notif/views/detail_notif_view.dart';
+import '../modules/detail_room/bindings/detail_room_binding.dart';
+import '../modules/detail_room/views/detail_room_view.dart';
 import '../modules/diskon/bindings/diskon_binding.dart';
 import '../modules/diskon/views/diskon_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -73,6 +77,16 @@ class AppPages {
       name: _Paths.DETAIL_NOTIF,
       page: () => const DetailNotifView(),
       binding: DetailNotifBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_HOTEL,
+      page: () => const DetailHotelView(),
+      binding: DetailHotelBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_ROOM,
+      page: () => const DetailRoomView(),
+      binding: DetailRoomBinding(),
     ),
   ];
 }

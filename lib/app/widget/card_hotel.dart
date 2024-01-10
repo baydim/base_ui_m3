@@ -1,4 +1,6 @@
+import 'package:base_ui_m3/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../theme/app_theme.dart';
 import '../util/price_room_util.dart';
@@ -92,7 +94,9 @@ class CardHotel extends StatelessWidget {
                     ),
                     color: Colors.transparent,
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed(Routes.DETAIL_HOTEL);
+                      },
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
