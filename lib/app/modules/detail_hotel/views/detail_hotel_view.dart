@@ -170,7 +170,7 @@ class DetailHotelView extends GetView<DetailHotelController> {
                         for (var i = 0; i < random.nextInt(5) + 1; i++)
                           Icon(
                             Icons.star_rate_rounded,
-                            size: 20,
+                            size: 15,
                             color: Colors.yellow.shade700,
                           ),
                         const SizedBox(
