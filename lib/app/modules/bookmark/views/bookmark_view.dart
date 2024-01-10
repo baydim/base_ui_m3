@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 import '../../../routes/app_pages.dart';
 import '../../../theme/app_theme.dart';
+import '../../../util/alamat_random_util.dart';
 import '../../../util/price_room_util.dart';
 import '../../../util/room_image_util.dart';
 import '../controllers/bookmark_controller.dart';
@@ -120,7 +121,7 @@ class BookmarkView extends GetView<BookmarkController> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Nama Hotel / Penginapan (Delluxe Room)",
+                                  randomNameHotelUtil(),
                                   style: appFont(context).bodySmall?.copyWith(),
                                 ),
                                 Text(
@@ -135,7 +136,9 @@ class BookmarkView extends GetView<BookmarkController> {
                                 Opacity(
                                   opacity: 0.5,
                                   child: Text(
-                                    "Jalan Lokasi Hotel",
+                                    getKotaFromAlamatUtil(
+                                      randomAlamatUtil(),
+                                    ),
                                     style:
                                         appFont(context).labelSmall?.copyWith(),
                                   ),
@@ -153,7 +156,9 @@ class BookmarkView extends GetView<BookmarkController> {
                         ),
                         color: Colors.transparent,
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Get.toNamed(Routes.DETAIL_HOTEL);
+                          },
                           borderRadius: BorderRadius.circular(8),
                         ),
                       ),
@@ -286,7 +291,9 @@ class BookmarkView extends GetView<BookmarkController> {
                                     ),
                                     color: Colors.transparent,
                                     child: InkWell(
-                                      onTap: () {},
+                                      onTap: () {
+                                        Get.toNamed(Routes.DETAIL_HOTEL);
+                                      },
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                   ),

@@ -1,4 +1,5 @@
 import 'package:base_ui_m3/app/routes/app_pages.dart';
+import 'package:base_ui_m3/app/util/alamat_random_util.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -62,7 +63,7 @@ class CardHotel extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
-                              "Nama Hotel / Penginapan",
+                              randomNameHotelUtil(),
                               style: appFont(context).bodySmall?.copyWith(),
                             ),
                             Text(
@@ -77,7 +78,9 @@ class CardHotel extends StatelessWidget {
                             Opacity(
                               opacity: 0.5,
                               child: Text(
-                                "Jalan Lokasi Hotel",
+                                getKotaFromAlamatUtil(
+                                  randomAlamatUtil(),
+                                ),
                                 style: appFont(context).labelSmall?.copyWith(),
                               ),
                             )

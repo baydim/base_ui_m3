@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../theme/app_theme.dart';
+import '../../../../util/alamat_random_util.dart';
 import '../../../../util/price_room_util.dart';
 import '../../../../util/room_image_util.dart';
 
@@ -52,7 +53,7 @@ class WidgetCardPesanan extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
-                                "Nama Hotel / Penginapan",
+                                randomNameHotelUtil(),
                                 style: appFont(context).labelSmall?.copyWith(),
                               ),
                               Text(
