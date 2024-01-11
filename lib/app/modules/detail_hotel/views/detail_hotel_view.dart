@@ -2,7 +2,6 @@ import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../routes/app_pages.dart';
 import '../../../theme/app_theme.dart';
 import '../../../util/random/date_random_util.dart';
 import '../../../util/random/price_room_util.dart';
@@ -350,7 +349,7 @@ class DetailHotelView extends GetView<DetailHotelController> {
             ///
             ///
             ///
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             for (var i in randomRoomAvail())
@@ -459,7 +458,7 @@ class DetailHotelView extends GetView<DetailHotelController> {
                                           ],
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 10,
                                       ),
                                       ElevatedButton.icon(
@@ -496,7 +495,7 @@ class DetailHotelView extends GetView<DetailHotelController> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                 ],

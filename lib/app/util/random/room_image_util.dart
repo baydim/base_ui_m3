@@ -284,7 +284,6 @@ List<Map<String, String>> randomRoomAvail() {
 
   jenisKamar.shuffle(); // Mengacak list
 
-  int jumlahMin = 2;
   int jumlahMax = min(5,
       jenisKamar.length); // Ambil maksimum 10 elemen jika jumlah lebih dari 10
 
