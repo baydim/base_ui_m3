@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../theme/app_theme.dart';
+import '../../../util/random/room_image_util.dart';
 import '../controllers/search_penginapan_controller.dart';
 
 class SearchPenginapanView extends GetView<SearchPenginapanController> {
@@ -266,6 +267,72 @@ class SearchPenginapanView extends GetView<SearchPenginapanController> {
                   ),
                 ],
               ),
+            ),
+          ),
+          Card(
+            elevation: 0,
+            color: appColor(context).useScheme.inversePrimary.withOpacity(0.2),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                8,
+              ),
+            ),
+            child: GridView.count(
+              padding: const EdgeInsetsDirectional.symmetric(
+                  horizontal: 10, vertical: 10),
+              shrinkWrap: true,
+              mainAxisSpacing: 5,
+              crossAxisSpacing: 5,
+              physics: const NeverScrollableScrollPhysics(),
+              crossAxisCount: 2,
+              children: [
+                for (var i in randomLocationResort())
+                  Card(
+                    elevation: 0,
+                    child: Stack(
+                      children: [
+                        Positioned.fill(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(
+                              8,
+                            ),
+                            child: FadeInImage(
+                              image: NetworkImage(
+                                i["image"] as String,
+                              ),
+                              placeholder: const AssetImage(
+                                "assets/images/peace.png",
+                              ),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          child: Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color:
+                                  appColor(context).useScheme.primaryContainer,
+                              borderRadius: const BorderRadius.only(
+                                bottomLeft: Radius.circular(8),
+                                bottomRight: Radius.circular(8),
+                              ),
+                            ),
+                            child: Text(
+                              i["nama"] as String,
+                              style: appFont(context).bodySmall?.copyWith(
+                                    color: appColor(context).useScheme.primary,
+                                  ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+              ],
             ),
           ),
         ],

@@ -198,3 +198,27 @@ String randomResortPantai() {
 
   return data[randomIndex];
 }
+
+List<Map<String, String>> randomLocationResort() {
+  var data = [
+    {
+      "nama": "Perkotaan",
+      "image": randomResortKota(),
+    },
+    {
+      "nama": "Pegunungan",
+      "image": randomResortGunung(),
+    },
+    {
+      "nama": "Pantai Pasir",
+      "image": randomResortPantai(),
+    },
+    {
+      "nama": "Hutan Tropis",
+      "image": randomResortHutan(),
+    },
+  ];
+
+  data.shuffle();
+  return data;
+}
