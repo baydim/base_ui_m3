@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:base_ui_m3/app/util/alamat_random_util.dart';
 import 'package:base_ui_m3/app/util/room_image_util.dart';
@@ -15,6 +16,7 @@ class DetailHotelView extends GetView<DetailHotelController> {
   @override
   Widget build(BuildContext context) {
     Random random = Random();
+    var size = MediaQuery.of(context).size;
     return Scaffold(
         body: Stack(
       children: [
@@ -269,22 +271,81 @@ class DetailHotelView extends GetView<DetailHotelController> {
                   const SizedBox(
                     height: 2.5,
                   ),
-                  SingleChildScrollView(
+                  SizedBox(
+                    width: size.width,
+                    height: size.width / 3,
+                    child: ListView(
                       scrollDirection: Axis.horizontal,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          const SizedBox(
-                            width: 20,
+                      children: [
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        for (var i = 0;
+                            i < (2 + random.nextInt(15 - 2 + 1));
+                            i++)
+                          cardCommentar(context),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                ],
+              ),
+            ),
+
+            ///
+            ///
+            ///
+            ///
+            ///
+            ///
+            ///
+            ///
+
+            Card(
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+              color:
+                  appColor(context).useScheme.inversePrimary.withOpacity(0.2),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                    ),
+                    child: Text(
+                      "Fasilitas",
+                      style: appFont(context).bodyMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
                           ),
-                          for (var i = 0; i < Random().nextInt(50); i++)
-                            cardCommentar(context),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                        ],
-                      )),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 2.5,
+                  ),
+                  GridView.count(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                    ),
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    crossAxisCount: 4,
+                    children: [
+                      for (var i = 0; i < (5 + random.nextInt(15 - 5 + 1)); i++)
+                        randomFasilitas(context, i)
+                    ],
+                  ),
                   const SizedBox(
                     height: 10,
                   ),
@@ -328,74 +389,261 @@ Widget cardCommentar(BuildContext context) {
         // maxHeight: MediaQuery.of(context).size.width / 4,
         // minHeight: MediaQuery.of(context).size.width / 4 - 1,
       ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 15,
-          vertical: 10,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Opacity(
-              opacity: 0.8,
-              child: Text(
-                data["nama"] ?? "--",
-                style: appFont(context).labelSmall?.copyWith(
-                      color: appColor(context).useScheme.brightness ==
-                              Brightness.dark
-                          ? Colors.black
-                          : Colors.white,
-                    ),
-              ),
+      child: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 15,
+              vertical: 10,
             ),
-            Row(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                for (var i = 0; i < Random().nextInt(5) + 1; i++)
-                  Icon(
-                    Icons.star_rate_rounded,
-                    size: 13,
-                    color: Colors.yellow.shade700,
+                Opacity(
+                  opacity: 0.8,
+                  child: Text(
+                    data["nama"] ?? "--",
+                    style: appFont(context).labelSmall?.copyWith(
+                          color: appColor(context).useScheme.brightness ==
+                                  Brightness.dark
+                              ? Colors.black
+                              : Colors.white,
+                        ),
                   ),
+                ),
+                Row(
+                  children: [
+                    for (var i = 0; i < Random().nextInt(5) + 1; i++)
+                      Icon(
+                        Icons.star_rate_rounded,
+                        size: 13,
+                        color: Colors.yellow.shade700,
+                      ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                // Expanded(
+                //   child:
+
+                Expanded(
+                  child: Text(
+                    data["komentar"] ?? "--",
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 3,
+                    style: appFont(context).labelSmall?.copyWith(
+                          color: appColor(context).useScheme.brightness ==
+                                  Brightness.dark
+                              ? Colors.black
+                              : Colors.white,
+                        ),
+                  ),
+                ),
+
+                Opacity(
+                  opacity: 0.8,
+                  child: Text(
+                    randomDaysString(),
+                    style: appFont(context).labelSmall?.copyWith(
+                          fontSize: 10,
+                          color: appColor(context).useScheme.brightness ==
+                                  Brightness.dark
+                              ? Colors.black
+                              : Colors.white,
+                        ),
+                  ),
+                ),
+                // ),
               ],
             ),
-            const SizedBox(
-              height: 5,
-            ),
-            // Expanded(
-            //   child:
+          ),
+          Positioned.fill(
+            child: Material(
+              borderRadius: BorderRadius.circular(
+                8,
+              ),
+              color: Colors.transparent,
+              child: InkWell(
+                borderRadius: BorderRadius.circular(8),
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (cxt) {
+                      return BackdropFilter(
+                        filter: ImageFilter.blur(
+                          sigmaX: 2,
+                          sigmaY: 2,
+                        ),
+                        child: Dialog(
+                          backgroundColor: appColor(context).useScheme.primary,
+                          child: IntrinsicHeight(
+                            child: IntrinsicWidth(
+                              child: Padding(
+                                padding: const EdgeInsets.all(20),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Opacity(
+                                      opacity: 0.8,
+                                      child: Text(
+                                        data["nama"] ?? "--",
+                                        style: appFont(context)
+                                            .labelSmall
+                                            ?.copyWith(
+                                              color: appColor(context)
+                                                          .useScheme
+                                                          .brightness ==
+                                                      Brightness.dark
+                                                  ? Colors.black
+                                                  : Colors.white,
+                                            ),
+                                      ),
+                                    ),
+                                    Row(
+                                      children: [
+                                        for (var i = 0;
+                                            i < Random().nextInt(5) + 1;
+                                            i++)
+                                          Icon(
+                                            Icons.star_rate_rounded,
+                                            size: 13,
+                                            color: Colors.yellow.shade700,
+                                          ),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 5,
+                                    ),
+                                    // Expanded(
+                                    //   child:
 
-            Text(
-              data["komentar"] ?? "--",
-              overflow: TextOverflow.ellipsis,
-              maxLines: 3,
-              style: appFont(context).labelSmall?.copyWith(
-                    color: appColor(context).useScheme.brightness ==
-                            Brightness.dark
-                        ? Colors.black
-                        : Colors.white,
-                  ),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Opacity(
-              opacity: 0.8,
-              child: Text(
-                randomDaysString(),
-                style: appFont(context).labelSmall?.copyWith(
-                      fontSize: 10,
-                      color: appColor(context).useScheme.brightness ==
-                              Brightness.dark
-                          ? Colors.black
-                          : Colors.white,
-                    ),
+                                    Text(
+                                      data["komentar"] ?? "--",
+                                      style:
+                                          appFont(context).labelSmall?.copyWith(
+                                                color: appColor(context)
+                                                            .useScheme
+                                                            .brightness ==
+                                                        Brightness.dark
+                                                    ? Colors.black
+                                                    : Colors.white,
+                                              ),
+                                    ),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    Opacity(
+                                      opacity: 0.8,
+                                      child: Text(
+                                        randomDaysString(),
+                                        style: appFont(context)
+                                            .labelSmall
+                                            ?.copyWith(
+                                              fontSize: 10,
+                                              color: appColor(context)
+                                                          .useScheme
+                                                          .brightness ==
+                                                      Brightness.dark
+                                                  ? Colors.black
+                                                  : Colors.white,
+                                            ),
+                                      ),
+                                    ),
+                                    // ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
               ),
             ),
-            // ),
-          ],
-        ),
+          )
+        ],
       ),
     ),
   );
+}
+
+Widget randomFasilitas(BuildContext context, int i) {
+  var data = materialIcons()[i];
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      const SizedBox(
+        height: 5,
+      ),
+      CircleAvatar(
+        radius: 20,
+        child: Icon(
+          data["icon"] as IconData,
+          size: 18,
+          color: appColor(context).useScheme.primary,
+        ),
+      ),
+      Expanded(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 5,
+            ),
+            child: Text(
+              data["nama"] as String,
+              style: appFont(context).labelSmall?.copyWith(
+                    fontWeight: FontWeight.normal,
+                  ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ),
+      )
+    ],
+  );
+}
+
+List<Map<String, Object>> materialIcons() {
+  var materialIcon = [
+    {"icon": Icons.hotel, "nama": "Hotel"},
+    {"icon": Icons.favorite, "nama": "Favorit"},
+    {"icon": Icons.wifi, "nama": "Wi-Fi"},
+    {"icon": Icons.alarm, "nama": "Alarm"},
+    {"icon": Icons.account_balance, "nama": "Pelayanan Keuangan"},
+    {"icon": Icons.pool, "nama": "Kolam Renang"},
+    {"icon": Icons.bluetooth, "nama": "Bluetooth"},
+    {"icon": Icons.cake, "nama": "Restoran"},
+    {"icon": Icons.directions_bike, "nama": "Fasilitas Olahraga"},
+    {"icon": Icons.event, "nama": "Ruang Acara"},
+    {"icon": Icons.flash_on, "nama": "Listrik"},
+    {"icon": Icons.gavel, "nama": "Layanan Hukum"},
+    {"icon": Icons.hourglass_empty, "nama": "Jam Check-in/Check-out"},
+    {"icon": Icons.insert_chart, "nama": "Fasilitas Bisnis"},
+    {"icon": Icons.language, "nama": "Layanan Multibahasa"},
+    {"icon": Icons.mic, "nama": "Fasilitas Konferensi"},
+    {"icon": Icons.palette, "nama": "Layanan Seni atau Desain"},
+    {"icon": Icons.radio, "nama": "Hiburan atau Komunikasi"},
+    {"icon": Icons.school, "nama": "Fasilitas Pendidikan"},
+    {"icon": Icons.train, "nama": "Transportasi"},
+    {"icon": Icons.local_parking, "nama": "Tempat Parkir"},
+    {"icon": Icons.room_service, "nama": "Layanan Kamar"},
+    {"icon": Icons.ac_unit, "nama": "AC"},
+    {"icon": Icons.local_bar, "nama": "Bar atau Lounge"},
+    {"icon": Icons.local_laundry_service, "nama": "Layanan Laundry"},
+    {"icon": Icons.local_grocery_store, "nama": "Toko Kelontong"},
+    {"icon": Icons.spa, "nama": "Spa"},
+    {"icon": Icons.pets, "nama": "Hewan Peliharaan"},
+    {"icon": Icons.smoke_free, "nama": "Kamar Bebas Asap Rokok"},
+    {"icon": Icons.child_friendly, "nama": "Lingkungan Ramah Anak"},
+  ];
+
+  materialIcon.shuffle();
+  return materialIcon;
 }
