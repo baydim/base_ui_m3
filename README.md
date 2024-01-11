@@ -1,4 +1,4 @@
-
+![THUMBNAIL](https://raw.githubusercontent.com/baydim/base_ui_m3/main/assets/images/thumb.png)
 
 
 # BASE UI MATERIAL 3
