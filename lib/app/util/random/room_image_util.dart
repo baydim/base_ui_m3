@@ -290,3 +290,17 @@ List<Map<String, String>> randomRoomAvail() {
   List<Map<String, String>> hasilRandom = jenisKamar.sublist(0, jumlahMax);
   return hasilRandom;
 }
+
+String randomUiPayment() {
+  var data = [
+    "https://th.bing.com/th/id/OIG.mqUaa9oYuzZnZ3Sl9Z3z?w=1024&h=1024&rs=1&pid=ImgDetMain",
+    "https://th.bing.com/th/id/OIG.rijptG8BZgMUMJyI.thd?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.cutXgnPbnOfg5O7ciZa7?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.KlHFVdYq.WEGMRZ1D1Lc?pid=ImgGn"
+  ];
+
+  var random = Random();
+  var randomIndex = random.nextInt(data.length);
+
+  return data[randomIndex];
+}

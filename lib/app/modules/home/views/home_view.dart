@@ -302,7 +302,7 @@ class _HomeViewState extends State<HomeView> {
                 horizontal: 20,
               ),
               child: Text(
-                "Base UI PAY",
+                "Base UI Payment",
                 style: appFont(context).titleMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
@@ -310,12 +310,12 @@ class _HomeViewState extends State<HomeView> {
             ),
           ),
 
-          const WidgetBaseCard(
+          WidgetBaseCard(
             child: FadeInImage(
               image: NetworkImage(
-                "https://th.bing.com/th/id/OIG.h6bYFoWSFx6VC7gWJy0W?w=1024&h=1024&rs=1&pid=ImgDetMain",
+                randomUiPayment(),
               ),
-              placeholder: AssetImage(
+              placeholder: const AssetImage(
                 "assets/images/peace.png",
               ),
               fit: BoxFit.cover,
