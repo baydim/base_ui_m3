@@ -1,11 +1,10 @@
 import 'package:base_ui_m3/app/routes/app_pages.dart';
-import 'package:base_ui_m3/app/util/alamat_random_util.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../theme/app_theme.dart';
-import '../util/price_room_util.dart';
-import '../util/room_image_util.dart';
+import '../util/random/alamat_random_util.dart';
+import '../util/random/price_room_util.dart';
+import '../util/random/room_image_util.dart';
 
 class CardHotel extends StatelessWidget {
   const CardHotel({super.key});

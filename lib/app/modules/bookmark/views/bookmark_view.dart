@@ -6,9 +6,9 @@ import 'package:get/get.dart';
 
 import '../../../routes/app_pages.dart';
 import '../../../theme/app_theme.dart';
-import '../../../util/alamat_random_util.dart';
-import '../../../util/price_room_util.dart';
-import '../../../util/room_image_util.dart';
+import '../../../util/random/alamat_random_util.dart';
+import '../../../util/random/price_room_util.dart';
+import '../../../util/random/room_image_util.dart';
 import '../controllers/bookmark_controller.dart';
 
 class BookmarkView extends GetView<BookmarkController> {

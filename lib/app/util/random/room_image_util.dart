@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'dart:math' as math;
+import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 
@@ -26,7 +27,6 @@ String roomRandomUtil() {
 
   var random = math.Random();
   var randomIndex = random.nextInt(url.length);
-  log(randomIndex.toString());
 
   return url[randomIndex];
 }
@@ -45,7 +45,6 @@ String promoRandomUtil() {
 
   var random = math.Random();
   var randomIndex = random.nextInt(url.length);
-  log(randomIndex.toString());
 
   var randomUrl = url[randomIndex];
   return randomUrl;
@@ -56,11 +55,11 @@ String nameRandomTypeUtil() {
     "Hotel",
     "Kost",
     "Guest house",
+    "Resort",
   ];
 
   var random = math.Random();
   var randomIndex = random.nextInt(url.length);
-  log(randomIndex.toString());
 
   var randomUrl = url[randomIndex];
   return randomUrl;
@@ -125,4 +124,77 @@ Map<String, String> randomComment() {
   }
 
   return review;
+}
+
+String randomResortKota() {
+  var data = [
+    "https://th.bing.com/th/id/OIG.cEHAnIqYySRIm43y0EEQ?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.sHNE7NFlZHqRSP6IwJvY?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.nhZ7KZWehcoEllHdp5uh?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.J_j595LfJURz.eZRba9g?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.Km0xeKJlU2Ho.GypMlXE?w=1024&h=1024&rs=1&pid=ImgDetMain",
+    "https://th.bing.com/th/id/OIG.vx1QY2DGrJ5L5TCMFp06?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.tWKMxVKdgKXoQysmKSRC?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.cXNSjVBespZDOwqmpYvw?pid=ImgGn",
+  ];
+
+  var random = Random();
+  var randomIndex = random.nextInt(data.length);
+
+  return data[randomIndex];
+}
+
+String randomResortHutan() {
+  var data = [
+    "https://th.bing.com/th/id/OIG.DkG1IiaXpKPVkidegyXD?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.VW0hxLwta34ibLotE85Q?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.kXM44U94TS4QI2Q.CcQ6?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.YRm1I57KrWL4wsMWEd4l?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.vaMJK8zhS0aWP4ia.HMw?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.0Ce5fc_Q_n6j1IxL4umy?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.UbyHhWT7R2M3A1L8Xz4Q?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.5GTU72RiqCrBApjvC8LX?pid=ImgGn",
+  ];
+
+  var random = Random();
+  var randomIndex = random.nextInt(data.length);
+
+  return data[randomIndex];
+}
+
+String randomResortGunung() {
+  var data = [
+    "https://th.bing.com/th/id/OIG.DkG1IiaXpKPVkidegyXD?w=1024&h=1024&rs=1&pid=ImgDetMain",
+    "https://th.bing.com/th/id/OIG.wbQMQvPE69Uf5TgaXrtR?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.35ZAyeGXay3bpjIFUDYS?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.LpOw6M.l45IQkn1PxY0Q?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.LyRe8W4Dh9h2IPtr12U2?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.FQ9nKTa0eMEuhz6plzhf?w=1024&h=1024&rs=1&pid=ImgDetMain",
+    "https://th.bing.com/th/id/OIG.xdMMZUyaratXsrj6FfUx?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.JPiCREWrtVNDObzl5eWs?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.S4t1Nag5HSsu.7TkFoSG?pid=ImgGn",
+  ];
+
+  var random = Random();
+  var randomIndex = random.nextInt(data.length);
+
+  return data[randomIndex];
+}
+
+String randomResortPantai() {
+  var data = [
+    "https://th.bing.com/th/id/OIG.Z7fyVvG4jvRyS559ymfL?w=1024&h=1024&rs=1&pid=ImgDetMain",
+    "https://th.bing.com/th/id/OIG.oYRoFPy4z4e7PyW3xYsI?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.v.A1a5LIWp3jHxQ_V6lI?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.Ehsbm9_dNoenh53d5cyE?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.J.SoFRFWUE2WlbaS8nCm?w=1024&h=1024&rs=1&pid=ImgDetMain",
+    "https://th.bing.com/th/id/OIG.PMdUmdJm3EUHwLQI6uLZ?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.rPqg9UtwH9GMtZ8ZPE7M?pid=ImgGn",
+    "https://th.bing.com/th/id/OIG.nsQufVvlfTnXO08p_On0?pid=ImgGn",
+  ];
+
+  var random = Random();
+  var randomIndex = random.nextInt(data.length);
+
+  return data[randomIndex];
 }

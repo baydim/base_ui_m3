@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../data/services/service_shared.dart';
-import '../../../util/room_image_util.dart';
+import '../../../util/random/room_image_util.dart';
 
 class WrapperMenuController extends GetxController {
   final indexPage = 0.obs;

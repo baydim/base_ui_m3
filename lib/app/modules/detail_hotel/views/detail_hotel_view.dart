@@ -1,15 +1,12 @@
 import 'dart:math';
 import 'dart:ui';
-
-import 'package:base_ui_m3/app/util/alamat_random_util.dart';
-import 'package:base_ui_m3/app/util/room_image_util.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
 import '../../../theme/app_theme.dart';
-import '../../../util/date_random_util.dart';
+import '../../../util/random/date_random_util.dart';
 import '../controllers/detail_hotel_controller.dart';
+import '../../../util/random/alamat_random_util.dart';
+import '../../../util/random/room_image_util.dart';
 
 class DetailHotelView extends GetView<DetailHotelController> {
   const DetailHotelView({Key? key}) : super(key: key);
@@ -262,6 +259,52 @@ class DetailHotelView extends GetView<DetailHotelController> {
                       horizontal: 20,
                     ),
                     child: Text(
+                      "Fasilitas",
+                      style: appFont(context).bodyMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 2.5,
+                  ),
+                  GridView.count(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                    ),
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    crossAxisCount: 4,
+                    children: [
+                      for (var i = 0; i < (5 + random.nextInt(15 - 5 + 1)); i++)
+                        randomFasilitas(context, i)
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                ],
+              ),
+            ),
+            Card(
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+              color:
+                  appColor(context).useScheme.inversePrimary.withOpacity(0.2),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                    ),
+                    child: Text(
                       "Komentar",
                       style: appFont(context).bodyMedium?.copyWith(
                             fontWeight: FontWeight.bold,
@@ -305,53 +348,6 @@ class DetailHotelView extends GetView<DetailHotelController> {
             ///
             ///
             ///
-
-            Card(
-              elevation: 0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
-              color:
-                  appColor(context).useScheme.inversePrimary.withOpacity(0.2),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 20,
-                    ),
-                    child: Text(
-                      "Fasilitas",
-                      style: appFont(context).bodyMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 2.5,
-                  ),
-                  GridView.count(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 20,
-                    ),
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    crossAxisCount: 4,
-                    children: [
-                      for (var i = 0; i < (5 + random.nextInt(15 - 5 + 1)); i++)
-                        randomFasilitas(context, i)
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                ],
-              ),
-            )
           ],
         )),
         Positioned(

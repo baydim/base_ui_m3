@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../../../util/room_image_util.dart';
+import '../../../util/random/room_image_util.dart';
 import '../controllers/home_controller.dart';
 import 'widget/widget_button_search.dart';
 import '../../../widget/widget_card_row.dart';
