@@ -221,3 +221,73 @@ List<Map<String, String>> randomLocationResort() {
   data.shuffle();
   return data;
 }
+
+List<Map<String, String>> randomRoomAvail() {
+  List<Map<String, String>> jenisKamar = [
+    {
+      "nama": "Single Room",
+      "deskripsi": "Kamar untuk satu tamu dengan satu tempat tidur."
+    },
+    {
+      "nama": "Double Room",
+      "deskripsi": "Kamar untuk dua tamu dengan satu tempat tidur ganda."
+    },
+    {
+      "nama": "Twin Room",
+      "deskripsi": "Kamar untuk dua tamu dengan dua tempat tidur terpisah."
+    },
+    {
+      "nama": "Triple Room",
+      "deskripsi": "Kamar untuk tiga tamu, biasanya dengan tiga tempat tidur."
+    },
+    {
+      "nama": "Suite",
+      "deskripsi":
+          "Kamar yang lebih besar dan seringkali lebih mewah, dengan area ruang tamu terpisah."
+    },
+    {
+      "nama": "Presidential Suite",
+      "deskripsi":
+          "Suite paling mewah dalam hotel, seringkali digunakan oleh tamu kenamaan atau tamu VIP."
+    },
+    {
+      "nama": "Connecting Rooms",
+      "deskripsi":
+          "Dua kamar atau lebih yang dapat terhubung melalui pintu di antara mereka."
+    },
+    {
+      "nama": "Family Room",
+      "deskripsi":
+          "Kamar yang dirancang khusus untuk penginapan keluarga, mungkin dengan fasilitas tambahan."
+    },
+    {
+      "nama": "Accessible Room",
+      "deskripsi":
+          "Kamar yang dirancang untuk tamu dengan kebutuhan khusus atau disabilitas."
+    },
+    {
+      "nama": "Adjoining Rooms",
+      "deskripsi":
+          "Kamar yang bersebelahan satu sama lain, namun tidak terhubung secara langsung."
+    },
+    {
+      "nama": "Economy Room",
+      "deskripsi":
+          "Kamar dengan fasilitas yang lebih sederhana dan harga yang lebih terjangkau."
+    },
+    {
+      "nama": "Penthouse",
+      "deskripsi":
+          "Suite yang terletak di lantai paling atas dengan pemandangan yang istimewa."
+    }
+  ];
+
+  jenisKamar.shuffle(); // Mengacak list
+
+  int jumlahMin = 2;
+  int jumlahMax = min(5,
+      jenisKamar.length); // Ambil maksimum 10 elemen jika jumlah lebih dari 10
+
+  List<Map<String, String>> hasilRandom = jenisKamar.sublist(0, jumlahMax);
+  return hasilRandom;
+}

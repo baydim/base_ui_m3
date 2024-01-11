@@ -148,7 +148,7 @@ class _HomeViewState extends State<HomeView> {
                 horizontal: 20,
               ),
               child: Text(
-                "Jelajahi wilayah baru",
+                "Petualangan baru",
                 style: appFont(context).titleMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),

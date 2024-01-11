@@ -2,8 +2,10 @@ import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../routes/app_pages.dart';
 import '../../../theme/app_theme.dart';
 import '../../../util/random/date_random_util.dart';
+import '../../../util/random/price_room_util.dart';
 import '../controllers/detail_hotel_controller.dart';
 import '../../../util/random/alamat_random_util.dart';
 import '../../../util/random/room_image_util.dart';
@@ -348,6 +350,157 @@ class DetailHotelView extends GetView<DetailHotelController> {
             ///
             ///
             ///
+            SizedBox(
+              height: 10,
+            ),
+            for (var i in randomRoomAvail())
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                    ),
+                    child: Text(
+                      i["nama"] as String,
+                      style: appFont(context).bodyMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
+                  ),
+                  Opacity(
+                    opacity: 0.8,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                      ),
+                      child: Text(
+                        i["deskripsi"] as String,
+                        style: appFont(context).labelSmall?.copyWith(),
+                      ),
+                    ),
+                  ),
+                  IntrinsicHeight(
+                    child: Card(
+                      margin: const EdgeInsets.symmetric(
+                        vertical: 4,
+                        horizontal: 20,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      elevation: 0,
+                      color: appColor(context)
+                          .useScheme
+                          .inversePrimary
+                          .withOpacity(0.2),
+                      child: Stack(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                flex: 2,
+                                child: Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  height: MediaQuery.of(context).size.width / 3,
+                                  decoration: BoxDecoration(
+                                    color: appColor(context).useScheme.primary,
+                                    borderRadius: BorderRadius.circular(
+                                      8,
+                                    ),
+                                  ),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(
+                                      8,
+                                    ),
+                                    child: FadeInImage(
+                                      image: NetworkImage(
+                                        roomRandomUtil(),
+                                      ),
+                                      placeholder: const AssetImage(
+                                        "assets/images/peace.png",
+                                      ),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(
+                                    10,
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              i["nama"] as String,
+                                              style: appFont(context)
+                                                  .bodySmall
+                                                  ?.copyWith(),
+                                            ),
+                                            Text(
+                                              "Rp${priceRandomUtil()}",
+                                              style: appFont(context)
+                                                  .bodyLarge
+                                                  ?.copyWith(
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      ElevatedButton.icon(
+                                        style: ButtonStyle(
+                                          padding:
+                                              const MaterialStatePropertyAll(
+                                            EdgeInsets.symmetric(
+                                              horizontal: 15,
+                                              vertical: 8,
+                                            ),
+                                          ),
+                                          minimumSize:
+                                              const MaterialStatePropertyAll(
+                                            Size.zero,
+                                          ),
+                                          textStyle: MaterialStatePropertyAll(
+                                            appFont(context).bodySmall,
+                                          ),
+                                        ),
+                                        onPressed: () {},
+                                        icon: const Icon(
+                                          Icons.verified_outlined,
+                                          size: 20,
+                                        ),
+                                        label: const Text("Booking"),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],
+              )
           ],
         )),
         Positioned(
@@ -373,7 +526,7 @@ class DetailHotelView extends GetView<DetailHotelController> {
 Widget cardCommentar(BuildContext context) {
   var data = randomComment();
   return Card(
-    color: appColor(context).useScheme.primary,
+    color: appColor(context).useScheme.primaryContainer,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(
         8,
@@ -401,10 +554,7 @@ Widget cardCommentar(BuildContext context) {
                   child: Text(
                     data["nama"] ?? "--",
                     style: appFont(context).labelSmall?.copyWith(
-                          color: appColor(context).useScheme.brightness ==
-                                  Brightness.dark
-                              ? Colors.black
-                              : Colors.white,
+                          color: appColor(context).useScheme.primary,
                         ),
                   ),
                 ),
@@ -430,10 +580,7 @@ Widget cardCommentar(BuildContext context) {
                     overflow: TextOverflow.ellipsis,
                     maxLines: 3,
                     style: appFont(context).labelSmall?.copyWith(
-                          color: appColor(context).useScheme.brightness ==
-                                  Brightness.dark
-                              ? Colors.black
-                              : Colors.white,
+                          color: appColor(context).useScheme.primary,
                         ),
                   ),
                 ),
@@ -444,10 +591,7 @@ Widget cardCommentar(BuildContext context) {
                     randomDaysString(),
                     style: appFont(context).labelSmall?.copyWith(
                           fontSize: 10,
-                          color: appColor(context).useScheme.brightness ==
-                                  Brightness.dark
-                              ? Colors.black
-                              : Colors.white,
+                          color: appColor(context).useScheme.primary,
                         ),
                   ),
                 ),
@@ -473,7 +617,12 @@ Widget cardCommentar(BuildContext context) {
                           sigmaY: 2,
                         ),
                         child: Dialog(
-                          backgroundColor: appColor(context).useScheme.primary,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                            8,
+                          )),
+                          backgroundColor:
+                              appColor(context).useScheme.primaryContainer,
                           child: IntrinsicHeight(
                             child: IntrinsicWidth(
                               child: Padding(
@@ -491,11 +640,8 @@ Widget cardCommentar(BuildContext context) {
                                             .labelSmall
                                             ?.copyWith(
                                               color: appColor(context)
-                                                          .useScheme
-                                                          .brightness ==
-                                                      Brightness.dark
-                                                  ? Colors.black
-                                                  : Colors.white,
+                                                  .useScheme
+                                                  .primary,
                                             ),
                                       ),
                                     ),
@@ -522,11 +668,8 @@ Widget cardCommentar(BuildContext context) {
                                       style:
                                           appFont(context).labelSmall?.copyWith(
                                                 color: appColor(context)
-                                                            .useScheme
-                                                            .brightness ==
-                                                        Brightness.dark
-                                                    ? Colors.black
-                                                    : Colors.white,
+                                                    .useScheme
+                                                    .primary,
                                               ),
                                     ),
                                     const SizedBox(
@@ -541,11 +684,8 @@ Widget cardCommentar(BuildContext context) {
                                             ?.copyWith(
                                               fontSize: 10,
                                               color: appColor(context)
-                                                          .useScheme
-                                                          .brightness ==
-                                                      Brightness.dark
-                                                  ? Colors.black
-                                                  : Colors.white,
+                                                  .useScheme
+                                                  .primary,
                                             ),
                                       ),
                                     ),
