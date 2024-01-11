@@ -103,7 +103,18 @@ class WidgetCityRound extends StatelessWidget {
                 ),
               ],
             ),
-            for (var i = 0; i < 8; i++)
+            for (var i in [
+              "Jakarta",
+              "Surabaya",
+              "Medan",
+              "Bandung",
+              "Bekasi",
+              "Makassar",
+              "Semarang",
+              "Tangerang",
+              "Depok",
+              "Palembang",
+            ])
               Row(
                 children: [
                   InkWell(
@@ -121,7 +132,7 @@ class WidgetCityRound extends StatelessWidget {
                           CircleAvatar(
                             radius: 25,
                             child: Text(
-                              "K$i",
+                              i.split("")[0] + i.split("")[1],
                             ),
                           ),
                           Expanded(
