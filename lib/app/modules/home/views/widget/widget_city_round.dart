@@ -142,7 +142,7 @@ class WidgetCityRound extends StatelessWidget {
                                   horizontal: 5,
                                 ),
                                 child: Text(
-                                  "Kota Ke $i",
+                                  i,
                                   style: appFont(context).labelSmall?.copyWith(
                                         fontWeight: FontWeight.normal,
                                       ),
