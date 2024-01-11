@@ -1,5 +1,4 @@
-![THUMBNAIL](https://raw.githubusercontent.com/baydim/base_ui_m3/main/assets/images/thumb.png)
-
+<img src="https://raw.githubusercontent.com/baydim/base_ui_m3/main/assets/images/thumb.png" alt="THUMBNAIL" width="100%">
 
 # BASE UI MATERIAL 3
 This is a Flutter application in UI development that refers to the base ThemeData of Flutter Material itself, from the use of textStyle to the selection of colors taken from the default ThemeData.
