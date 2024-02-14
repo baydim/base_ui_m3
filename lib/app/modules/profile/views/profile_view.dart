@@ -33,13 +33,76 @@ class ProfileView extends GetView<ProfileController> {
                 ))
           ],
         ),
-        body: Center(
-          child: SwitchListTile(
-            value: wrapperMenuController.isDark.value,
-            onChanged: (v) {
-              wrapperMenuController.funcToDark(useDark: v);
-            },
-          ),
+        body: ListView(
+          padding: const EdgeInsets.all(20),
+          children: [
+            Row(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(
+                    1000,
+                  ),
+                  child: const CircleAvatar(
+                    radius: 30,
+                    child: FadeInImage(
+                      image: NetworkImage(
+                        "https://th.bing.com/th/id/OIG2.at5raRXxVejU33B_Amfa?w=1024&h=1024&rs=1&pid=ImgDetMain",
+                      ),
+                      placeholder: AssetImage(
+                        "assets/images/peace.png",
+                      ),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Name profile",
+                    ),
+                    const SizedBox(
+                      height: 2,
+                    ),
+                    Opacity(
+                      opacity: 0.9,
+                      child: Text(
+                        "+62 857 3537 9740",
+                        style: appFont(context).bodySmall?.copyWith(),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            ListTile(
+              contentPadding: EdgeInsets.zero,
+              title: const Text(
+                "Mode malam",
+              ),
+              trailing: Checkbox(
+                value: wrapperMenuController.isDark.value,
+                onChanged: (v) {
+                  wrapperMenuController.funcToDark(useDark: v ?? false);
+                },
+              ),
+              onTap: () {
+                wrapperMenuController.funcToDark(
+                  useDark: wrapperMenuController.isDark.value,
+                );
+              },
+            ),
+            // SwitchListTile(
+            //   value: wrapperMenuController.isDark.value,
+            //   onChanged: (v) {
+            //     wrapperMenuController.funcToDark(useDark: v);
+            //   },
+            // ),
+          ],
         ),
       );
     });
