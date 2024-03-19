@@ -16,6 +16,7 @@ abstract class Routes {
   static const DETAIL_NOTIF = _Paths.DETAIL_NOTIF;
   static const DETAIL_HOTEL = _Paths.DETAIL_HOTEL;
   static const DETAIL_ROOM = _Paths.DETAIL_ROOM;
+  static const BASE_PAYMENT = _Paths.BASE_PAYMENT;
 }
 
 abstract class _Paths {
@@ -31,4 +32,5 @@ abstract class _Paths {
   static const DETAIL_NOTIF = '/detail-notif';
   static const DETAIL_HOTEL = '/detail-hotel';
   static const DETAIL_ROOM = '/detail-room';
+  static const BASE_PAYMENT = '/base-payment';
 }

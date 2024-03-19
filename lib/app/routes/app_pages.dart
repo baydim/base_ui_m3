@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/base_payment/bindings/base_payment_binding.dart';
+import '../modules/base_payment/views/base_payment_view.dart';
 import '../modules/bookmark/bindings/bookmark_binding.dart';
 import '../modules/bookmark/views/bookmark_view.dart';
 import '../modules/detail_hotel/bindings/detail_hotel_binding.dart';
@@ -87,6 +89,11 @@ class AppPages {
       name: _Paths.DETAIL_ROOM,
       page: () => const DetailRoomView(),
       binding: DetailRoomBinding(),
+    ),
+    GetPage(
+      name: _Paths.BASE_PAYMENT,
+      page: () => const BasePaymentView(),
+      binding: BasePaymentBinding(),
     ),
   ];
 }
