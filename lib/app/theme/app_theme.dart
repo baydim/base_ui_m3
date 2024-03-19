@@ -66,3 +66,5 @@ ThemeData appTheme(BuildContext context, {bool? useDark}) {
     useMaterial3: true,
   );
 }
+
+Size appSize(BuildContext context) => MediaQuery.of(context).size;
